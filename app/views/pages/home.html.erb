@@ -2,10 +2,10 @@
 <% @spots.each do |spot| %>
   <p><%= spot.address %></p>
 <% end %>
-<%= simple_form_for [Spot.new] do |f| %>
+<%= simple_form_for [@spot] do |f| %>
   <%= f.input :address, label: 'Spot Address' %>
   <%= f.input :crowd_congestion, label: 'How crowded is it?' %>
   <%= f.input :description, label: 'Description' %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } label: 'Images' %>
+  <!-- <= f.input :photos, as: :file, input_html: { multiple: true } label: 'Images' %> -->
   <%= f.submit "Add!✔️", class: 'btn btn-success' %>
 <% end %>
