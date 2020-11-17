@@ -24,7 +24,7 @@ class SpotsController < ApplicationController
   def update
     @spot = Spot.find(params[:id])
     unless @spot.user == current_user
-      redirect_to root_path, notice: 'Not allowed to Delete 😫'
+      redirect_to root_path, notice: 'Not allowed to Delete 🤬'
     end
     if spot.update(spot_params)
       redirect_to spot_path(@spot), notice: 'Info updated!'
