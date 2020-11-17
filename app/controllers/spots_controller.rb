@@ -1,11 +1,12 @@
 class SpotsController < ApplicationController
 
   def show
+    @spot = Spot.find(params[:id])
   end
 
   def create
     @spot = Spot.new(spot_params)
-    @spot.user == current_user
+    @spot.user = current_user
     if @spot.save
       redirect_to spot_path(@spot), notice: 'Spot Created!'
     else
@@ -21,9 +22,24 @@ class SpotsController < ApplicationController
   end
 
   def update
+    @spot = Spot.find(params[:id])
+    unless @spot.user == current_user
+      redirect_to root_path, notice: 'Not allowed to Delete 😫'
+    end
+    if spot.update(spot_params)
+      redirect_to spot_path(@spot), notice: 'Info updated!'
+    else
+      redirect_to :edit
+    end
   end
 
   def destroy
+    @spot = Spot.find(params[:id])
+    unless @spot.user == current_user
+      redirect_to root_path, notice: 'Not allowed to Delete 🤬'
+    end
+    @spot.destroy
+    redirect_to root_path, notice: 'Spot Deleted!'
   end
 
   private
