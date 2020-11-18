@@ -5,12 +5,9 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.new
   end
 
-  # def new
-  #   @favorite = Favorite.new
-  # end
-
   def create
     @favorites = Favorite.where(user: current_user).sort_by { |event| [event.fav_spot] }
+    # por que eu preciso passar o @favorite a cima?
     @favorite = Favorite.new(favorite_params)
     @favorite.user = current_user
     if @favorite.save

@@ -1,5 +1,5 @@
 <h1>View da Post a New Spot</h1>
-<%= simple_form_for [@user, @spot] do |f| %>
+<%= simple_form_for [@spot] do |f| %>
   <%= f.input :address, label: 'Address' %>
   <%= f.input :crowd_congestion, label: 'Crowded' %>
   <%= f.input :description, label: 'Description' %>
