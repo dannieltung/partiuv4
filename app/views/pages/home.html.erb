@@ -1,1 +1,7 @@
-<h1>Home Page</h1>
+<h1>Spots Index</h1>
+<% @spots.each do |spot| %>
+  <p>Address: <%= spot.address %></p>
+  <p>Crowd: <%= spot.crowd_congestion %></p>
+  <p>Description: <%= spot.description %></p>
+  <hr>
+<% end %>
