@@ -3,10 +3,6 @@ class PagesController < ApplicationController
 
   # o equivalente ao index
   def home
-    @spot = Spot.new
     @spots = Spot.all
   end
-
-  private
-
 end

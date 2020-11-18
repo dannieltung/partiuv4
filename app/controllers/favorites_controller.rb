@@ -1,9 +1,15 @@
 class FavoritesController < ApplicationController
+
+  def new
+    @favorite = Favorite.new
+    @favorite.user = current_user
+  end
+
   def create
     @favorite = Favorite.new(favorite_params)
     @favorite.user = current_user
     if @favorite.save
-      redirect_to favorit_path(@favorite), notice: 'Favorites created!'
+      redirect_to favorite_path(@favorite), notice: 'Favorites created!'
     end
   end
 
