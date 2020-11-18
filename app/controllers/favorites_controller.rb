@@ -1,15 +1,22 @@
 class FavoritesController < ApplicationController
 
-  def new
+  def index
+    @favorites = Favorite.where(user: current_user).sort_by { |event| [event.fav_spot] }
     @favorite = Favorite.new
-    @favorite.user = current_user
   end
 
+  # def new
+  #   @favorite = Favorite.new
+  # end
+
   def create
+    @favorites = Favorite.where(user: current_user).sort_by { |event| [event.fav_spot] }
     @favorite = Favorite.new(favorite_params)
     @favorite.user = current_user
     if @favorite.save
-      redirect_to favorite_path(@favorite), notice: 'Favorites created!'
+      redirect_to favorites_path, notice: 'Favorites created!'
+    else
+      render :index
     end
   end
 
@@ -25,6 +32,6 @@ class FavoritesController < ApplicationController
   private
 
   def favorite_params
-    params.require(:favorite).permit(:spot_id)
+    params.require(:favorite).permit(:fav_spot)
   end
 end
