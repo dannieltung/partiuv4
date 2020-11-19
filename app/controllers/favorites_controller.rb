@@ -7,13 +7,14 @@ class FavoritesController < ApplicationController
 
   def create
     @favorites = Favorite.where(user: current_user).sort_by { |event| [event.fav_spot] }
-    # por que eu preciso passar o @favorite a cima?
     @favorite = Favorite.new(favorite_params)
     @favorite.user = current_user
     if @favorite.save
       redirect_to favorites_path, notice: 'Favorites created!'
     else
       render :index
+      # render é renderizar uma view mas na redirect para outro lugar.
+      # não é redirect to pois se for, vc vai perder a informação que o user digitou.
     end
   end
 
