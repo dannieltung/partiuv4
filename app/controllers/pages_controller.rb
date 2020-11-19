@@ -4,5 +4,11 @@ class PagesController < ApplicationController
   # o equivalente ao index
   def home
     @spots = Spot.all
+    @markers = @spots.geocoded.map do |spot|
+      {
+        lat: spot.latitude,
+        lng: spot.longitude
+      }
+    end
   end
 end
