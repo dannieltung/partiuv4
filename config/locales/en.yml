@@ -1,7 +1,7 @@
 en:
   activerecord:
     models:
-      favorite: "Favorite"
+      favorite:
     attributes:
       favorite:
         fav_spot: "Address"
