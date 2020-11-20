@@ -2,3 +2,5 @@
 <p> Address: <%= @spot.address %> </p>
 <p> Crowded: <%= @spot.crowd_congestion %> </p>
 <p> Description: <%= @spot.description %> </p>
+
+<%= cl_image_tag spot_image(@spot), class: "ima_tag", crop: :fill, :alt => @spot.address %>

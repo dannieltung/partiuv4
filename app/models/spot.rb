@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
-  has_many_attached :photos
+  has_one_attached :photo
   belongs_to :user
   validates :crowd_congestion, presence: true
   validates :address, presence: true
