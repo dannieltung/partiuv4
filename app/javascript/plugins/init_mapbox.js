@@ -20,7 +20,6 @@ const addMarkersToMap = (map, markers) => {
 
 const getUserLocation = () => {
   var x = document.getElementById("demo");
-  const btn = document.getElementById("btn");
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
@@ -32,7 +31,7 @@ const getUserLocation = () => {
     x.innerHTML = "Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude;
   }
-  btn.addEventListener("click", () => {
+  $(document).ready("load", () => {
     getLocation();
   })
 };
