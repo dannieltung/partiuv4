@@ -1,12 +1,12 @@
 <h1>View da Home</h1>
-<% @spots.each do |spot| %>
-  <p>Address: <%= spot.address %></p>
-  <p>Crowd: <%= spot.crowd_congestion %></p>
-  <p>Description: <%= spot.description %></p>
-  <p>Latitude: <%= spot.latitude %></p>
-  <p>Longitude: <%= spot.longitude %></p>
+<!-- < @spots.each do |spot| >
+  <p>Address: <= spot.address ></p>
+  <p>Crowd: <= spot.crowd_congestion ></p>
+  <p>Description: <= spot.description ></p>
+  <p>Latitude: <= spot.latitude ></p>
+  <p>Longitude: <= spot.longitude ></p>
   <hr>
-<% end %>
+< end > -->
 <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
