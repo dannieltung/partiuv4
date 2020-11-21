@@ -5,18 +5,30 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Destroying all spots..."
+Spot.destroy_all
+
+puts "Destroying all favorites..."
+Favorite.destroy_all
+
 puts "Destroying all users..."
 User.destroy_all
 
 puts "Starting to Seed..."
 
-1.times do
-  user = User.create(
-    first_name: "John",
-    last_name: "Wick",
-    email: "john@wick.com",
-    password: "123123"
-  )
-end
+user = User.create(first_name: 'User1', last_name: 'User1', email: 'user1@email.com', password: '123123')
+Spot.create(address: 'Avenida Higienópolis, 148 São Paulo Brasil', crowd_congestion: 3, user_id: user.id)
+Spot.create(address: 'Rua Augusta, 2860 São Paulo Brasil', crowd_congestion: 2, user_id: user.id)
+Spot.create(address: 'Alameda Lorena, 600 São Paulo Brasil', crowd_congestion: 3, user_id: user.id)
+Spot.create(address: 'Alameda Lorena,1600 São Paulo Brasil', crowd_congestion: 4, user_id: user.id)
+Spot.create(address: 'Rua Augusta,1300 São Paulo Brasil', crowd_congestion: 4, user_id: user.id)
+Spot.create(address: 'Rua Oscar Freire, 500 São Paulo Brasil', crowd_congestion: 5, user_id: user.id)
+Spot.create(address: 'Rua Oscar Freire, 300 São Paulo Brasil', crowd_congestion: 5, user_id: user.id)
+Spot.create(address: 'Rua Oscar Freire, 1200 São Paulo Brasil', crowd_congestion: 5, user_id: user.id)
+Spot.create(address: 'Rua Augusta, 2000 São Paulo Brasil', crowd_congestion: 2, user_id: user.id)
+Spot.create(address: 'Rua Augusta, 1800 São Paulo Brasil', crowd_congestion: 2, user_id: user.id)
+
+Favorite.create(fav_spot: 'Rua Oscar Freire, 715 São Paulo Brasil', user_id: user.id)
 
 puts "SEEDED!"
