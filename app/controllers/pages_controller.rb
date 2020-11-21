@@ -7,7 +7,8 @@ class PagesController < ApplicationController
     @markers = @spots.geocoded.map do |spot|
       {
         lat: spot.latitude,
-        lng: spot.longitude
+        lng: spot.longitude,
+        infoWindow: render_to_string(partial: "spots/info_window", locals: { spot: spot })
       }
     end
   end
