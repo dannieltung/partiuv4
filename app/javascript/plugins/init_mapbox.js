@@ -18,6 +18,25 @@ const addMarkersToMap = (map, markers) => {
   });
 };
 
+const getUserLocation = () => {
+  var x = document.getElementById("demo");
+  const btn = document.getElementById("btn");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+  }
+  function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude +
+    "<br>Longitude: " + position.coords.longitude;
+  }
+  btn.addEventListener("click", () => {
+    getLocation();
+  })
+};
+
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
@@ -31,8 +50,8 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
-
   }
+  getUserLocation();
 };
 
 export { initMapbox };
