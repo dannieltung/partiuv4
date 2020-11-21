@@ -17,7 +17,7 @@ User.destroy_all
 
 puts "Starting to Seed..."
 
-user = User.create(first_name: 'User1', last_name: 'User1', email: 'user1@email.com', password: '123123')
+user = User.create(first_name: 'User_First_Name', last_name: 'User_Last_Name', email: 'user@user.com', password: '123123')
 Spot.create(address: 'Avenida Higienópolis, 148 São Paulo Brasil', crowd_congestion: 3, user_id: user.id)
 Spot.create(address: 'Rua Augusta, 2860 São Paulo Brasil', crowd_congestion: 2, user_id: user.id)
 Spot.create(address: 'Alameda Lorena, 600 São Paulo Brasil', crowd_congestion: 3, user_id: user.id)
