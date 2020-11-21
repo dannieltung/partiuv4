@@ -2,13 +2,22 @@ en:
   activerecord:
     models:
       favorite:
+      spot:
     attributes:
+      spot:
+        address: "Address"
+        crowd_congestion: ""
       favorite:
         fav_spot: "Address"
     errors:
       models:
+        spot:
+          attributes:
+            address:
+              blank: "can't be blank 🤪"
+            crowd_congestion:
+              blank: "Please...how crowded is it?"
         favorite:
           attributes:
             fav_spot:
               blank: "can't be blank 🤪"
-
