@@ -3,6 +3,8 @@
   <%= f.input :fav_spot, label: 'Address' %>
   <%= f.submit "Add ✔", class: 'btn btn-success' %>
 <% end %>
+<p id="map"></p>
+<p id="demo"></p>
 <% @favorites.each do |favorite| %>
   <p><%= favorite.fav_spot %></p>
 <% end %>
