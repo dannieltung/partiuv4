@@ -5,6 +5,8 @@ class PagesController < ApplicationController
   def home
 
     @country = request.location.country
+    @city = request.location.city
+    @coordinates = request.location.coordinates
 
     @spots = Spot.all
     @markers = @spots.geocoded.map do |spot|
