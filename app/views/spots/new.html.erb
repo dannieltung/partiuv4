@@ -2,8 +2,8 @@
 <p id="demo"></p>
 <h1>View da Post a New Spot</h1>
 <%= simple_form_for [@spot] do |f| %>
-  <!-- <= f.input :address, default: 'bla bla bla', label: 'Address' %> -->
-  <%= f.input :address, input_html: {value: f.object.address || 'bla bla bla'} %>
+  <%= f.input :address, label: 'Address' %>
+  <!-- <= f.input :address, input_html: {value: f.object.address || 'bla bla bla'} %> -->
   <%= f.input :crowd_congestion, label: 'Crowded' %>
   <%= f.input :description, label: 'Description' %>
   <%= f.submit "Add ✔", class: 'btn btn-success' %>
