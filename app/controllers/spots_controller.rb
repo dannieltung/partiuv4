@@ -1,7 +1,8 @@
 class SpotsController < ApplicationController
 
   def new
-    @spot = Spot.new
+    # @coordinates = request.location.coordinates
+    @spot = Spot.new(address: 'qualquer coisa')
   end
 
   def create

@@ -1,10 +1,11 @@
-<h1>View da Index do Favorites por User com a form de New Favorites</h1>
-<%= simple_form_for [@favorite] do |f| %>
-  <%= f.input :fav_spot, label: 'Address' %>
-  <%= f.submit "Add ✔", class: 'btn btn-success' %>
-<% end %>
 <p id="map"></p>
 <p id="demo"></p>
+<h1>View da Index do Favorites por User com a form de New Favorites</h1>
+<%= simple_form_for [@favorite] do |f| %>
+  <!-- <= f.input :fav_spot, label: 'Address' %> -->
+  <%= f.input :fav_spot, input_html: {value: f.object.fav_spot || 'bla bla bla'} %>
+  <%= f.submit "Add ✔", class: 'btn btn-success' %>
+<% end %>
 <% @favorites.each do |favorite| %>
   <p><%= favorite.fav_spot %></p>
 <% end %>
