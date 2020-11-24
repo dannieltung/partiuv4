@@ -23,6 +23,11 @@
   transform: rotate(45deg) translate(-8px, -8px);
 }
 
+.btn-flex {
+  display: flex;
+  justify-content: center;
+}
+
 .btn-ok {
   background-color: #8de68d;
   border: 2px solid green;
@@ -40,6 +45,29 @@
 .btn-ok:hover {
   background-color: #4CAF50; /* Green */
 }
+
+.btn-blue {
+  background-color: #84d2da;
+  border: 2px solid #167ffb26;
+  box-shadow: 0px 0px 2px 2px #73a1f540;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 24px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  transition-duration: 0.4s;
+}
+
+.btn-ok:hover {
+  background-color: #4CAF50; /* Green */
+}
+
+
+
+
 
 
 
