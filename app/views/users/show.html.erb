@@ -1,0 +1,13 @@
+<p><%= @user.first_name %></p>
+<p><%= @user.last_name %></p>
+<h1>Account Info</h1>
+<%= cl_image_tag('cygme6cswc1nmxohli5x') %>
+<%= simple_form_for [@user] do |f| %>
+  <%= f.input :first_name, label: 'First Name' %>
+  <%= f.input :last_name, label: 'Last Name' %>
+  <!-- <= f.input :photo, as: :file, label: 'Photo' %> -->
+  <%= f.submit "Update! ⚙️", class: 'btn btn-outline-success btn-sm' %>
+<% end %>
+<br>
+<!-- <= link_to edit_user_registration_path do %> -->
+<div> Edit Password </div>
