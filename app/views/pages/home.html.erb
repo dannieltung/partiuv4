@@ -12,11 +12,9 @@
   <p>Longitude: <= spot.longitude ></p>
   <hr>
 < end > -->
-<div class="box-map">
-  <div id="map"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+<div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
 <p id="demo"></p>

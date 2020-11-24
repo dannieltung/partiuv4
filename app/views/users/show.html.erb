@@ -4,14 +4,16 @@
   <p><%=@user.last_name %></p>
 </div>
 <%= cl_image_tag('cygme6cswc1nmxohli5x') %>
-<%= simple_form_for [@user] do |f| %>
-  <%= f.input :first_name, label: 'First Name' %>
-  <%= f.input :last_name, label: 'Last Name' %>
-  <!-- <= f.input :photo, as: :file, label: 'Photo' %> -->
-  <div class="btn-flex">
-    <%= f.submit "Update! ⚙️", class: 'btn-blue' %>
-  </div>
-<% end %>
+<div class="txt-items">
+  <%= simple_form_for [@user] do |f| %>
+    <%= f.input :first_name, label: 'First Name' %>
+    <%= f.input :last_name, label: 'Last Name' %>
+    <!-- <= f.input :photo, as: :file, label: 'Photo' %> -->
+    <div class="btn-flex">
+      <%= f.submit "Update! ⚙️", class: 'btn-blue' %>
+    </div>
+  <% end %>
+</div>
 <br>
 <!-- <= link_to edit_user_registration_path do %> -->
 <div class="btn-flex">
