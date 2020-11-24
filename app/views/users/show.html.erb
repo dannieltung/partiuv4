@@ -1,6 +1,7 @@
 <p><%= @user.first_name %></p>
 <p><%= @user.last_name %></p>
 <h1>Account Info</h1>
+<%= cl_image_tag('cygme6cswc1nmxohli5x') %>
 <%= simple_form_for [@user] do |f| %>
   <%= f.input :first_name, label: 'First Name' %>
   <%= f.input :last_name, label: 'Last Name' %>
