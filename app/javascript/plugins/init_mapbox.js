@@ -3,7 +3,6 @@ import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
 
 const mapElement = document.getElementById('map');
 
-
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
@@ -12,11 +11,11 @@ const fitMapToMarkers = (map, markers) => {
 
 const addMarkersToMap = (map, markers) => {
   markers.forEach((marker) => {
-    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow); // add this
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
     new mapboxgl.Marker()
       .setLngLat([ marker.lng, marker.lat ])
-      .setPopup(popup) // add this
+      .setPopup(popup)
       .addTo(map);
   });
 };
@@ -34,18 +33,16 @@ const getUserLocation = (map, markers) => {
     x.innerHTML = "Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude;
     markers.push({lat: position.coords.latitude, lng: position.coords.longitude });
-    console.log(markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
   $(document).ready(() => {
-    // console.log("Dom loaded pelo document ready");
     getLocation();
   })
 };
 
 const initMapbox = () => {
-  if (mapElement) { // only build a map if there's a div#map to inject into
+  if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
@@ -53,7 +50,6 @@ const initMapbox = () => {
     });
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
     const markers = JSON.parse(mapElement.dataset.markers);
-    // console.log(markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
     getUserLocation(map, markers);
