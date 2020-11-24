@@ -1,7 +1,8 @@
-<div class="container">
-  <h1>POSTED!!!</h1>
-  <%= cl_image_tag spot_image(@spot), class: "ima_tag", height: 100, width: 200 ,crop: :fill, :alt => @spot.address %>
-  <p> Address: <%= @spot.address %> </p>
-  <p> Crowded: <%= @spot.crowd_congestion %> </p>
-  <p> Description: <%= @spot.description %> </p>
-</div>
+<p id="map"></p>
+<h1>Spot Show</h1>
+<p> Address: <%= @spot.address %> </p>
+<p> Crowded: <%= @spot.crowd_congestion %> </p>
+<p> Description: <%= @spot.description %> </p>
+<% @spot.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
