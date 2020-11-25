@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_18_235305) do
+ActiveRecord::Schema.define(version: 2020_11_25_003633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,23 +36,34 @@ ActiveRecord::Schema.define(version: 2020_11_18_235305) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "congestions", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "level"
+    t.string "description"
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.index ["spot_id"], name: "index_congestions_on_spot_id"
+    t.index ["user_id"], name: "index_congestions_on_user_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.string "fav_spot"
+    t.bigint "spot_id"
+    t.index ["spot_id"], name: "index_favorites_on_spot_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "spots", force: :cascade do |t|
     t.string "address"
-    t.integer "crowd_congestion"
-    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.float "latitude"
     t.float "longitude"
+    t.string "name"
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
@@ -66,12 +77,14 @@ ActiveRecord::Schema.define(version: 2020_11_18_235305) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.string "current_location"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "congestions", "spots"
+  add_foreign_key "congestions", "users"
+  add_foreign_key "favorites", "spots"
   add_foreign_key "favorites", "users"
   add_foreign_key "spots", "users"
 end
