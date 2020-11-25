@@ -1,3 +1,6 @@
+require 'net/http'
+require 'json'
+
 <p id="map"></p>
 <p id="demo"></p>
 <h1>View da Post a New Spot</h1>
@@ -7,7 +10,12 @@
   <%= f.input :crowd_congestion, label: 'Crowded' %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.input :description, label: 'Description' %>
-  <%= f.input :photo, as: :file %>
   <%= f.submit "Add ✔", class: 'btn btn-success' %>
 <% end %>
 
+
+<% url = "https://api.mapbox.com/geocoding/v5/mapbox.places/-73.989,40.733.json?types=poi&access_token=pk.eyJ1IjoiZHdmdHVuZyIsImEiOiJja2Y2MDBna3kwMHpmMnhsNzloc2p3NGg2In0.SSp3ebPLNxKjllw9EmWXPQ
+" %>
+<% uri = URI(url) %>
+<% response = Net::HTTP.get(uri) %>
+<%= JSON.parse(response) %>
