@@ -1,7 +1,9 @@
 module ApplicationHelper
   def spot_image(spot)
-    if spot.photo.present?
-      spot.photo.key
+    if spot.photos.present?
+      spot.photos.each do |photo|
+        photo.key
+      end
     else
       "no-image-icon"
     end

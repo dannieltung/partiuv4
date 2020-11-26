@@ -1,15 +1,22 @@
+require 'net/http'
+require 'json'
+
 <p id="map"></p>
 <p id="demo"></p>
-<h1 class="txt-head">View da Post a New Spot</h1>
-<div class="txt-items">
-  <%= simple_form_for [@spot] do |f| %>
-    <%= f.input :address, label: 'Address' %>
-    <!-- <= f.input :address, input_html: {value: f.object.address || 'bla bla bla'} %> -->
-    <%= f.input :crowd_congestion, label: 'Crowded' %>
-    <%= f.input :description, label: 'Description' %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <div class="btn-flex">
-      <%= f.submit "Add ✔", class: 'btn-ok' %>
-    </div>
-  <% end %>
-</div>
+<h1>View da Post a New Spot</h1>
+<%= simple_form_for [@spot] do |f| %>
+  <%= f.input :address, label: 'Address' %>
+  <!-- <= f.input :address, input_html: {value: f.object.address || 'bla bla bla'} %> -->
+  <%= f.input :crowd_congestion, label: 'Crowded' %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :description, label: 'Description' %>
+  <%= f.submit "Add ✔", class: 'btn btn-success' %>
+<% end %>
+
+<br>
+
+<% url = "https://api.mapbox.com/geocoding/v5/mapbox.places/-46.7303688,-23.523743099999997.json?types=poi&access_token=pk.eyJ1IjoiZHdmdHVuZyIsImEiOiJja2Y2MDBna3kwMHpmMnhsNzloc2p3NGg2In0.SSp3ebPLNxKjllw9EmWXPQ
+" %>
+<% uri = URI(url) %>
+<% response = Net::HTTP.get(uri) %>
+<%= JSON.parse(response) %>
