@@ -13,8 +13,9 @@ require 'json'
   <%= f.submit "Add ✔", class: 'btn btn-success' %>
 <% end %>
 
+<br>
 
-<% url = "https://api.mapbox.com/geocoding/v5/mapbox.places/-73.989,40.733.json?types=poi&access_token=pk.eyJ1IjoiZHdmdHVuZyIsImEiOiJja2Y2MDBna3kwMHpmMnhsNzloc2p3NGg2In0.SSp3ebPLNxKjllw9EmWXPQ
+<% url = "https://api.mapbox.com/geocoding/v5/mapbox.places/-46.7303688,-23.523743099999997.json?types=poi&access_token=pk.eyJ1IjoiZHdmdHVuZyIsImEiOiJja2Y2MDBna3kwMHpmMnhsNzloc2p3NGg2In0.SSp3ebPLNxKjllw9EmWXPQ
 " %>
 <% uri = URI(url) %>
 <% response = Net::HTTP.get(uri) %>
