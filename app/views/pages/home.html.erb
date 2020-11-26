@@ -2,17 +2,16 @@
 <p>country: <%= @country %> </p>
 <p>city: <%= @city %> </p>
 <p>coordinates: <%= @coordinates %> </p>
-<!-- < @spots.each do |spot| >
-  <p>Address: <= spot.address ></p>
-  <p>Crowd: <= spot.crowd_congestion ></p>
-  <p>Description: <= spot.description ></p>
-  <p>Latitude: <= spot.latitude ></p>
-  <p>Longitude: <= spot.longitude ></p>
-  <hr>
-< end > -->
 <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 <p id="demo"></p>
+
+<% @spots.each do |spot| %>
+  <p>Address: <%= link_to spot.address, spot_path(spot) %></p>
+  <p>Crowd: <%= spot.crowd_congestion %></p>
+  <p>Description: <%= spot.description %></p>
+  <hr>
+<% end %>
 
