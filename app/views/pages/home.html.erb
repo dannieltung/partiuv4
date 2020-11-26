@@ -1,4 +1,3 @@
-
 <h1>View da Home</h1>
 <p>country: <%= @country %> </p>
 <p>city: <%= @city %> </p>
@@ -8,9 +7,11 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 <p id="demo"></p>
+
 <% @spots.each do |spot| %>
   <p>Address: <%= link_to spot.address, spot_path(spot) %></p>
   <p>Crowd: <%= spot.crowd_congestion %></p>
   <p>Description: <%= spot.description %></p>
   <hr>
 <% end %>
+
