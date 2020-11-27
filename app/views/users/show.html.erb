@@ -1,4 +1,3 @@
-<p class="icon-update"></p>
 <h1 class="txt-head">Account Info</h1>
 <div class="txt-items">
   <p class=""><%=@user.first_name %></p>
@@ -11,7 +10,7 @@
     <%= f.input :last_name, label: 'Last Name' %>
     <!-- <= f.input :photo, as: :file, label: 'Photo' %> -->
     <div class="btn-flex">
-      <%= f.submit "Update! ⚙️", class: 'btn-blue' %>
+      <%= f.submit "Update", class: 'btn-blue' %>
     </div>
   <% end %>
 </div>
