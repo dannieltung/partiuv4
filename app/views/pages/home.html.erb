@@ -1,13 +1,10 @@
 <h1>View da Home</h1>
-<p>country: <%= @country %> </p>
-<p>city: <%= @city %> </p>
-<p>coordinates: <%= @coordinates %> </p>
 <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 <p id="demo"></p>
 <% @spots.each do |spot| %>
-  <p><%= link_to spot.address, spot_path(spot) %></p>
+  <p><%= link_to spot.name, spot_path(spot) %> - <%= link_to spot.address, spot_path(spot) %></p>
   <hr>
 <% end %>

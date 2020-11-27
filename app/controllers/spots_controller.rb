@@ -50,6 +50,6 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:address, :description, photos: [])
+    params.require(:spot).permit(:address, :name)
   end
 end

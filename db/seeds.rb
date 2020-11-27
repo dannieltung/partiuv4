@@ -18,16 +18,14 @@ User.destroy_all
 puts "Starting to Seed..."
 
 user = User.create(first_name: 'User_First_Name', last_name: 'User_Last_Name', email: 'user@user.com', password: '123123')
-Spot.create(address: 'Avenida Higienópolis 148 São Paulo Brasil', user_id: user.id)
-Spot.create(address: 'Alameda Lorena, 600 São Paulo Brasil', user_id: user.id)
-Spot.create(address: 'Alameda Lorena,1600 São Paulo Brasil', user_id: user.id)
-Spot.create(address: 'Rua Augusta,1300 São Paulo Brasil', user_id: user.id)
-Spot.create(address: 'Rua Jericó, 193 São Paulo Brasil', user_id: user.id)
-Spot.create(address: 'Rua Oscar Freire, 300 São Paulo Brasil', user_id: user.id)
-Spot.create(address: 'Rua Oscar Freire, 1200 São Paulo Brasil', user_id: user.id)
-Spot.create(address: 'Rua Augusta, 2000 São Paulo Brasil', user_id: user.id)
-Spot.create(address: 'Rua Augusta, 1800 São Paulo Brasil', user_id: user.id)
-
-Favorite.create(fav_spot: 'Alameda Lorena, 600 São Paulo Brasil', user_id: user.id)
+Spot.create(name: 'Gero', address: 'Rua Haddock Lobo 1629 São Paulo SP Brasil', user_id: user.id)
+Spot.create(name: 'Tordesilhas', address: 'Alameda Tiete 489 São Paulo SP Brasil', user_id: user.id)
+Spot.create(name: 'Zucco', address: 'Rua Haddock Lobo 1416 São Paulo SP Brasil', user_id: user.id)
+Spot.create(name: 'Chef Rouge', address: 'Rua Bela Cintra 2238 São Paulo SP Brasil', user_id: user.id)
+Spot.create(name: 'Fasano', address: 'Rua Vitório Fasano 88 São Paulo SP Brasil', user_id: user.id)
+Spot.create(name: 'A Bela Cintra', address: 'Rua Bela Cintra 2325 São Paulo SP Brasil', user_id: user.id)
+Spot.create(name: 'Corrientes 348 Jardins', address: 'Rua Bela Cintra 2305 São Paulo SP Brasil', user_id: user.id)
+Spot.create(name: 'Serafina Jardins', address: 'Alameda Lorena 1705 São Paulo SP Brasil', user_id: user.id)
+Spot.create(name: 'Miró Gastronomia', address: 'Alameda Lorena 2101 São Paulo SP Brasil', user_id: user.id)
 
 puts "SEEDED!"

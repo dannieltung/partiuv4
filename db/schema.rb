@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_002358) do
+ActiveRecord::Schema.define(version: 2020_11_27_010418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,22 +36,32 @@ ActiveRecord::Schema.define(version: 2020_11_27_002358) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "crowdnesses", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "spot_id"
+    t.integer "level"
+    t.string "description"
+    t.index ["spot_id"], name: "index_crowdnesses_on_spot_id"
+    t.index ["user_id"], name: "index_crowdnesses_on_user_id"
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.string "fav_spot"
+    t.bigint "spot_id"
+    t.index ["spot_id"], name: "index_favorites_on_spot_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "spots", force: :cascade do |t|
     t.string "address"
-    t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
     t.float "latitude"
     t.float "longitude"
+    t.string "name"
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
@@ -71,6 +81,9 @@ ActiveRecord::Schema.define(version: 2020_11_27_002358) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "crowdnesses", "spots"
+  add_foreign_key "crowdnesses", "users"
+  add_foreign_key "favorites", "spots"
   add_foreign_key "favorites", "users"
   add_foreign_key "spots", "users"
 end
