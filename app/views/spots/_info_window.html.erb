@@ -1,1 +1,8 @@
-<p><%= spot.address %></p>
+<p><%= spot.name %></p>
+<hr>
+<% spot.crowdnesses.each do |crowdness| %>
+  <p>Posted on <%= crowdness.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
+  <p>Level: <%= crowdness.level %></p>
+  <p>Description: <%= crowdness.description %></p>
+  <hr>
+<% end %>

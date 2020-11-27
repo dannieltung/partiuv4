@@ -6,14 +6,17 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts "Destroying all spots..."
-Spot.destroy_all
+# puts "Destroying all users..."
+# User.destroy_all
 
-puts "Destroying all favorites..."
-Favorite.destroy_all
+# puts "Destroying all favorites..."
+# Favorite.destroy_all
 
-puts "Destroying all users..."
-User.destroy_all
+# puts "Destroying all crowdnesses..."
+# Crowdness.destroy_all
+
+# puts "Destroying all spots..."
+# Spot.destroy_all
 
 puts "Starting to Seed..."
 
