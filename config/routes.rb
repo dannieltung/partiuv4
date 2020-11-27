@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
-  resources :spots, only: [:new, :create, :show]
-  resources :favorites
   resources :users, only: [:show]
+  resources :spots, only: [:new, :create, :show]
+  resources :favorites, only: [:index, :new, :create]
+  resources :crowdnesses, only: [:new, :create]
 end
