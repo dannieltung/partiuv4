@@ -1,6 +1,6 @@
 <h1 class="txt-head">Account Info</h1>
 <div class="txt-items">
-  <p><%=@user.first_name %></p>
+  <p class=""><%=@user.first_name %></p>
   <p><%=@user.last_name %></p>
 </div>
 <%= cl_image_tag('cygme6cswc1nmxohli5x') %>
@@ -10,13 +10,14 @@
     <%= f.input :last_name, label: 'Last Name' %>
     <!-- <= f.input :photo, as: :file, label: 'Photo' %> -->
     <div class="btn-flex">
-      <%= f.submit "Update! ⚙️", class: 'btn-blue' %>
+      <%= f.submit "Update", class: 'btn-blue' %>
     </div>
   <% end %>
 </div>
 <br>
 <!-- <= link_to edit_user_registration_path do %> -->
-<div class="btn-flex">
-  <button type="button" class="btn-blue">Edit Password
+<div class="btn-flex txt-items">
+  <button type="button" class="btn-blue">
+    Edit Password
   </button>
 </div>
