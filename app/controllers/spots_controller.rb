@@ -2,16 +2,15 @@ class SpotsController < ApplicationController
 
   def new
     @spot = Spot.new
-    @crowdness = Crowdness.new
+    # cria uma instancia isolada
+    @spot.crowdnesses.build
+    # cria uma instancia associada
   end
 
   def create
     @spot = Spot.new(spot_params)
     @spot.user = current_user
-    @crowdness = Crowdness.new(crowdness_params)
-    @crowdness.user = current_user
-    @crowdness.spot = @spot
-    if @spot.save && @crowdness.save
+    if @spot.save!
       redirect_to spot_path(@spot), notice: 'Spot Created!'
     else
       render :new
@@ -25,11 +24,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:address, :name)
-  end
-
-  def crowdness_params
-    params.require(:crowdness).permit(:level, :description, :spot_id)
+    params.require(:spot).permit(:address, :name, crowdnesses_attributes: [:level, :description, :user_id])
   end
 
 end

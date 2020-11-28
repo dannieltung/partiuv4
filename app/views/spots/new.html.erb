@@ -4,7 +4,8 @@
 <%= simple_form_for [@spot] do |f| %>
   <%= f.input :name, label: 'Name' %>
   <%= f.input :address, label: 'Address' %>
-  <%= f.simple_fields_for [@crowdness] do |g| %>
+  <%= f.simple_fields_for :crowdnesses do |g| %>
+    <%= g.hidden_field :user_id, value: current_user.id %>
     <%= g.input :level, label: 'Level' %>
     <%= g.input :description, label: 'Description' %>
   <% end %>
