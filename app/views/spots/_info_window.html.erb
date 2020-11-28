@@ -1,7 +1,7 @@
 <p><%= link_to spot.name, new_spot_crowdness_path(spot) %></p>
 <hr>
 <% spot.crowdnesses.each do |crowdness| %>
-  <p>Posted on <%= crowdness.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
+  <p>Posted on <%= link_to crowdness.created_at.strftime("%d/%m/%Y %I:%M %p"), spot_crowdness_path(spot, crowdness) %></p>
   <p>Level: <%= crowdness.level %></p>
   <p>Description: <%= crowdness.description %></p>
   <hr>
