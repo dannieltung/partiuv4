@@ -1,6 +1,4 @@
-<p id="map"></p>
-<p id="demo"></p>
-<h1>View da Post a New Spot</h1>
+<!-- <h1>View da Post a New Spot</h1> -->
 <%= simple_form_for [@spot] do |f| %>
   <%= f.input :name, label: 'Name' %>
   <%= f.input :address, label: 'Address' %>
@@ -13,4 +11,3 @@
     <%= f.submit "Add ✔", class: 'btn btn-blue' %>
   </div>
 <% end %>
-<br>

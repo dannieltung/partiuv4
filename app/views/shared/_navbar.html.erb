@@ -1,9 +1,13 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606503672/logopartiu-10_ndn9pw.png" %>
+    <%= '#PARTIU' %>
   <% end %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <div class="btn-sand" onclick="this.classList.toggle('change')";>
+    <% if user_signed_in? %>
+      <%= cl_image_tag user_image(current_user), width: 40, height: 40, radius: "max", crop: :thumb, gravity: :face, class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% end %>
+    <div class="btn-sand" onclick="this.classList.toggle('change')">
       <div class="bar1"></div>
       <div class="bar2"></div>
       <div class="bar3"></div>
@@ -12,7 +16,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
-        <li class="nav-item d-md-none">
+        <li class="nav-item d-md-none d-sm-none">
           <%= link_to "Account", user_path(current_user), class: "nav-link" %>
             <%= link_to "My Favorites Spots", favorites_path, class: "nav-link" %>
             <%= link_to "Post a Spot", new_spot_path, class: "nav-link" %>
