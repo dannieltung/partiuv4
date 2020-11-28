@@ -5,6 +5,8 @@
   <%= f.input :crowd_congestion, label: 'Crowded' %>
   <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.input :description, label: 'Description' %>
-  <%= f.submit "Add ✔", class: 'btn btn-success' %>
+  <div class="txt-items txt-items">
+    <%= f.submit "Add ✔", class: 'btn btn-blue' %>
+  </div>
 <% end %>
 
