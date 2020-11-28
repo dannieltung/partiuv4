@@ -1,4 +1,3 @@
-<!-- <h1>View da Post a New Spot</h1> -->
 <%= simple_form_for [@spot] do |f| %>
   <%= f.input :name, label: 'Name' %>
   <%= f.input :address, label: 'Address' %>
@@ -8,7 +7,7 @@
     <%= g.input :description, label: 'Description' %>
     <%= g.input :photos, as: :file, input_html: { multiple: true } %>
   <% end %>
-  <div class="txt-items txt-items">
+  <div class="txt-items">
     <%= f.submit "Add ✔", class: 'btn btn-blue' %>
   </div>
 <% end %>

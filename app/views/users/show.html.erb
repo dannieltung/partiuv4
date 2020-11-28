@@ -3,7 +3,7 @@
   <p class="txt-sentances"><%=@user.first_name %></p>
   <p class="txt-sentances"><%=@user.last_name %></p>
 </div>
-<%= cl_image_tag('cygme6cswc1nmxohli5x') %>
+<!-- <= cl_image_tag('cygme6cswc1nmxohli5x') %> -->
 <div class="txt-items">
   <%= simple_form_for [@user] do |f| %>
     <%= f.input :first_name, label: 'First Name' %>
