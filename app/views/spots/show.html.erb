@@ -1,9 +1,15 @@
 <div class="container">
-  <h1>POSTED!!!</h1>
-  <% @spot.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, class: "ima_tag", height: 100, width: 200 ,crop: :fill, :alt => @spot.address %>
-  <% end %>
-  <p> Address: <%= @spot.address %> </p>
-  <p> Crowded: <%= @spot.crowd_congestion %> </p>
-  <p> Description: <%= @spot.description %> </p>
+  <h1 class="txt-head">POSTED!!!</h1>
+  <div class="carrossel">
+    <ul>
+      <% @spot.photos.each do |photo| %>
+        <li>
+          <%= cl_image_tag photo.key, class: "ima_tag", height: 250, width: 400 ,crop: :fill, :alt => @spot.address %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+  <p class="txt-items"> Address: <%= @spot.address %> </p>
+  <p class="txt-items"> Crowded: <%= @spot.crowd_congestion %> </p>
+  <p class="txt-items"> Description: <%= @spot.description %> </p>
 </div>
