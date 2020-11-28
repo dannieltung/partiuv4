@@ -1,21 +1,17 @@
-
-<h1 class="txt-head">View da Home</h1>
-  <div class="txt-items">
-<!--     <p>country: <%= @country %></p>
-    <p>city: <%= @city %></p>
-    <p>coordinates: <%= @coordinates %></p> -->
-  </div>
+<!-- <h1 class="txt-head">View da Home</h1> -->
+  <button>
+    <%= link_to "Post!", new_spot_path %>
+  </button>
+  <style>
+    .marker {
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+  </style>
 <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 <p id="demo"></p>
-
-<div class="txt-items">
-  <% @spots.each do |spot| %>
-    <p>Address: <%= link_to spot.address, spot_path(spot) %></p>
-    <p>Crowd: <%= spot.crowd_congestion %></p>
-    <p>Description: <%= spot.description %></p>
-    <hr>
-  <% end %>
-</div>

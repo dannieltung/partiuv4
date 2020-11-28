@@ -9,7 +9,14 @@
       <% end %>
     </ul>
   </div>
-  <p class="txt-items"> Address: <%= @spot.address %> </p>
-  <p class="txt-items"> Crowded: <%= @spot.crowd_congestion %> </p>
-  <p class="txt-items"> Description: <%= @spot.description %> </p>
+ 
+  <p> Name: <%= @spot.name %> </p>
+  <p> Address: <%= @spot.address %> </p>
+  <hr>
+  <% @spot.crowdnesses.each do |crowdness| %>
+    <p>Posted on <%= crowdness.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
+    <p>Level: <%= crowdness.level %></p>
+    <p>Description: <%= crowdness.description %></p>
+    <hr>
+  <% end %>
 </div>
