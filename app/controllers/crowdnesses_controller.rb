@@ -16,6 +16,10 @@ class CrowdnessesController < ApplicationController
     end
   end
 
+  def show
+    @crowdness = Crowdness.find(params[:id])
+  end
+
   private
 
   def crowdness_params

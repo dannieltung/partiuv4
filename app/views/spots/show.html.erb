@@ -1,8 +1,5 @@
 <div class="container">
   <h1>POSTED!!!</h1>
-  <!-- < @spot.photos.each do |photo| %>
-    <= cl_image_tag photo.key, class: "ima_tag", height: 100, width: 200 ,crop: :fill, :alt => @spot.address %>
-  < end %> -->
   <p> Name: <%= @spot.name %> </p>
   <p> Address: <%= @spot.address %> </p>
   <hr>
@@ -10,6 +7,15 @@
     <p>Posted on <%= crowdness.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
     <p>Level: <%= crowdness.level %></p>
     <p>Description: <%= crowdness.description %></p>
+    <div class="carrossel">
+      <ul>
+        <% crowdness.photos.each do |photo| %>
+          <li>
+            <%= cl_image_tag photo.key, class: "ima_tag", height: 250, width: 400 ,crop: :fill, :alt => @spot.address %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
     <hr>
   <% end %>
 </div>
