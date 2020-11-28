@@ -1,24 +1,16 @@
-require 'net/http'
-require 'json'
-
 <p id="map"></p>
 <p id="demo"></p>
 <h1>View da Post a New Spot</h1>
 <%= simple_form_for [@spot] do |f| %>
+  <%= f.input :name, label: 'Name' %>
   <%= f.input :address, label: 'Address' %>
-  <!-- <= f.input :address, input_html: {value: f.object.address || 'bla bla bla'} %> -->
-  <%= f.input :crowd_congestion, label: 'Crowded' %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-  <%= f.input :description, label: 'Description' %>
+  <%= f.simple_fields_for :crowdnesses do |g| %>
+    <%= g.hidden_field :user_id, value: current_user.id %>
+    <%= g.input :level, label: 'Level' %>
+    <%= g.input :description, label: 'Description' %>
+  <% end %>
   <div class="txt-items txt-items">
     <%= f.submit "Add ✔", class: 'btn btn-blue' %>
   </div>
 <% end %>
-
 <br>
-
-<% url = "https://api.mapbox.com/geocoding/v5/mapbox.places/-46.7303688,-23.523743099999997.json?types=poi&access_token=pk.eyJ1IjoiZHdmdHVuZyIsImEiOiJja2Y2MDBna3kwMHpmMnhsNzloc2p3NGg2In0.SSp3ebPLNxKjllw9EmWXPQ
-" %>
-<% uri = URI(url) %>
-<% response = Net::HTTP.get(uri) %>
-<%= JSON.parse(response) %>

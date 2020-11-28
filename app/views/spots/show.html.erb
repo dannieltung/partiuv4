@@ -1,9 +1,15 @@
 <div class="container">
   <h1>POSTED!!!</h1>
-  <% @spot.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, class: "ima_tag", height: 100, width: 200 ,crop: :fill, :alt => @spot.address %>
-  <% end %>
+  <!-- < @spot.photos.each do |photo| %>
+    <= cl_image_tag photo.key, class: "ima_tag", height: 100, width: 200 ,crop: :fill, :alt => @spot.address %>
+  < end %> -->
+  <p> Name: <%= @spot.name %> </p>
   <p> Address: <%= @spot.address %> </p>
-  <p> Crowded: <%= @spot.crowd_congestion %> </p>
-  <p> Description: <%= @spot.description %> </p>
+  <hr>
+  <% @spot.crowdnesses.each do |crowdness| %>
+    <p>Posted on <%= crowdness.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
+    <p>Level: <%= crowdness.level %></p>
+    <p>Description: <%= crowdness.description %></p>
+    <hr>
+  <% end %>
 </div>
