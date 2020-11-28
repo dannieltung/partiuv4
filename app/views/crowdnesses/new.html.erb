@@ -1,0 +1,5 @@
+<%= simple_form_for [@spot, @crowdness] do |f| %>
+  <%= f.input :level, label: 'Level' %>
+  <%= f.input :description, label: 'Description' %>
+  <%= f.submit "Add ✔", class: 'btn btn-success' %>
+<% end %>
