@@ -11,7 +11,7 @@
       <ul>
         <% crowdness.photos.each do |photo| %>
           <li>
-            <%= cl_image_tag photo.key, class: "ima_tag", height: 250, width: 400 ,crop: :fill, :alt => @spot.address %>
+            <%= cl_image_tag photo.key, class: "ima_tag", height: 250, width: 400 ,crop: :fill %>
           </li>
         <% end %>
       </ul>
