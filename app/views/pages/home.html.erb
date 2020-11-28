@@ -1,17 +1,21 @@
 <!-- <h1 class="txt-head">View da Home</h1> -->
-  <button  d-flex>
-    <%= link_to "Post!", new_spot_path %>
-  </button>
-  <style>
-    .marker {
-      background-size: cover;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-    }
-  </style>
+<style>
+  .marker {
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+</style>
 <div id="map"
       style="width: 100%; height: 600px;"
       data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-<p id="demo"></p>
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+<div class="btn-post">
+  <button class="btn-blue">
+    <%= link_to "Post!", new_spot_path %>
+  </button>
+</div>
+<!-- <p id="demo"></p>
+ -->
