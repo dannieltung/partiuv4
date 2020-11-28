@@ -13,6 +13,7 @@ class PagesController < ApplicationController
       {
         lat: spot.latitude,
         lng: spot.longitude,
+        # iconSize: [50, 50],
         infoWindow: render_to_string(partial: "spots/info_window", locals: { spot: spot })
       }
     end
