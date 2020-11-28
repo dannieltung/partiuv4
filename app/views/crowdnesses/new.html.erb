@@ -1,5 +1,6 @@
 <%= simple_form_for [@spot, @crowdness] do |f| %>
   <%= f.input :level, label: 'Level' %>
   <%= f.input :description, label: 'Description' %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
   <%= f.submit "Add ✔", class: 'btn btn-success' %>
 <% end %>

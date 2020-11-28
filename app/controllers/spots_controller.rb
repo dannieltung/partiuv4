@@ -1,7 +1,7 @@
 class SpotsController < ApplicationController
 
   def new
-    a = Geocoder.search([-23.551582693574243, -46.68934025256385])
+    a = Geocoder.search([-19.9491412, -43.9504669])
     @spot = Spot.new(address: "#{a.first.data['address']['road']} #{a.first.data['address']['house_number']} #{a.first.data['address']['city']} #{a.first.data['address']['state']} #{a.first.data['address']['country']}")
     # cria uma instancia isolada
     @spot.crowdnesses.build
@@ -25,7 +25,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:address, :name, crowdnesses_attributes: [:level, :description, :user_id])
+    params.require(:spot).permit(:address, :name, crowdnesses_attributes: [:level, :description, :user_id, photos: []])
   end
 
 end
