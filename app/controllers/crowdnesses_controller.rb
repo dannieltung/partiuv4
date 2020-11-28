@@ -19,6 +19,6 @@ class CrowdnessesController < ApplicationController
   private
 
   def crowdness_params
-    params.require(:crowdness).permit(:level, :description)
+    params.require(:crowdness).permit(:level, :description, photos: [])
   end
 end
