@@ -4,7 +4,7 @@
 <div class="txt-items">
   <%= simple_form_for [@favorite] do |f| %>
     <%= f.association :spot %>
-    <div class="btn-flex">
+    <div class="btn-flex txt-items">
       <%= f.submit "Add ✔", class: 'btn-ok' %>
     </div>
   <% end %>
