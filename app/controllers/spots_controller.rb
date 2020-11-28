@@ -2,7 +2,7 @@ class SpotsController < ApplicationController
 
   def new
     a = Geocoder.search([-23.551582693574243, -46.68934025256385])
-    @spot = Spot.new(address: a.first.data['display_name'])
+    @spot = Spot.new(address: "#{a.first.data['address']['road']} #{a.first.data['address']['house_number']} #{a.first.data['address']['city']} #{a.first.data['address']['state']} #{a.first.data['address']['country']}")
     # cria uma instancia isolada
     @spot.crowdnesses.build
     # cria uma instancia associada
