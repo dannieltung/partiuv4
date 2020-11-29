@@ -1,6 +1,4 @@
 <div class="container">
-  <h1 class="txt-head">POSTED!!!</h1>
-
   <p> Name: <%= @spot.name %> </p>
   <p> Address: <%= @spot.address %> </p>
   <hr>
@@ -12,7 +10,7 @@
       <ul>
         <% crowdness.photos.each do |photo| %>
           <li>
-            <%= cl_image_tag photo.key, class: "ima_tag", height: 250, width: 400 ,crop: :fill, :alt => @spot.address %>
+            <%= cl_image_tag photo.key, class: "ima_tag", height: 250, width: 400 ,crop: :fill %>
           </li>
         <% end %>
       </ul>
