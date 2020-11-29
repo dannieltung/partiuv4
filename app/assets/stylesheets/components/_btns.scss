@@ -83,8 +83,13 @@
 }
 
 .btn-post {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  // display: inline-block;
+  position: relative;
 }
+
+// .btn-post button {
+//   position: absolute;
+//   bottom: 2em;
+//   right: 2em;
+// }
 
