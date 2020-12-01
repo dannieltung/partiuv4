@@ -35,8 +35,13 @@ const getUserLocation = (map, markers) => {
     }
   }
   function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
+    // x.innerHTML = "Latitude: " + position.coords.latitude +
+    // "<br>Longitude: " + position.coords.longitude;
+    const inputLatitude = document.getElementById("user_current_latitude");
+      inputLatitude.value = position.coords.latitude;
+    const inputLongitude = document.getElementById("user_current_longitude");
+      inputLongitude.value = position.coords.longitude;
+
     markers.push({lat: position.coords.latitude, lng: position.coords.longitude });
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
@@ -46,6 +51,22 @@ const getUserLocation = (map, markers) => {
   })
 };
 
+const initMapbox = () => {
+  if (mapElement) {
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v10'
+    });
+    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
+    const markers = JSON.parse(mapElement.dataset.markers);
+    addMarkersToMap(map, markers);
+    fitMapToMarkers(map, markers);
+    getUserLocation(map, markers);
+  }
+};
+
+export { initMapbox };
 // const getUserLocation = (map, markers) => {
 //   let x = document.getElementById("demo");
 //   function getLocation() {
@@ -83,19 +104,3 @@ const getUserLocation = (map, markers) => {
 //   })
 // };
 
-const initMapbox = () => {
-  if (mapElement) {
-    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
-    });
-    map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
-    const markers = JSON.parse(mapElement.dataset.markers);
-    addMarkersToMap(map, markers);
-    fitMapToMarkers(map, markers);
-    getUserLocation(map, markers);
-  }
-};
-
-export { initMapbox };
