@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_222954) do
+ActiveRecord::Schema.define(version: 2020_12_01_002102) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_11_27_222954) do
   create_table "crowdnesses", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "spot_id"
-    t.integer "level"
+    t.string "level"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -64,6 +64,10 @@ ActiveRecord::Schema.define(version: 2020_11_27_222954) do
     t.float "latitude"
     t.float "longitude"
     t.string "name"
+    t.integer "number"
+    t.string "street"
+    t.string "city"
+    t.string "state"
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
 

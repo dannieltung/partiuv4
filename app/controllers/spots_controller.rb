@@ -1,16 +1,20 @@
 class SpotsController < ApplicationController
 
   def new
-    a = Geocoder.search([-19.9491412, -43.9504669])
-    @spot = Spot.new(address: "#{a.first.data['address']['road']} #{a.first.data['address']['house_number']} #{a.first.data['address']['city']} #{a.first.data['address']['state']} #{a.first.data['address']['country']}")
+    # user_geolocation = params[:user_geolocation]
+    # a = Geocoder.search([-19.9491412, -43.9504669])
+    # @spot = Spot.new(address: "#{a.first.data['address']['road']} #{a.first.data['address']['house_number']} #{a.first.data['address']['city']} #{a.first.data['address']['state']} #{a.first.data['address']['country']}")
+    @spot = Spot.new
     # cria uma instancia isolada
     @spot.crowdnesses.build
     # cria uma instancia associada
   end
 
   def create
+    address = [params[:street], params[:number], params[:city], params[:state], "Brasil"].join(" ")
     @spot = Spot.new(spot_params)
     @spot.user = current_user
+    @spot.address = address
     if @spot.save!
       redirect_to spot_path(@spot), notice: 'Spot Created!'
     else
