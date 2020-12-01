@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form action="/spots/new">
   <input type="hidden" name="user_geolocation" value="[-19.9491412, -43.9504669]">
   <input type="submit" value="Post">
@@ -18,3 +19,29 @@
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 <p id="demo"></p>
+=======
+
+<% <h1 class="txt-head">View da Home</h1> %>
+<div class="body">
+  <button  d-flex>
+    <%= link_to "Post!", new_spot_path %>
+  </button>
+  <style>
+    .marker {
+      background-size: cover;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+  </style>
+  <div id="map"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <p id="demo"></p>
+  <form action="/spots/new">
+    <input type="hidden" name="user_geolocation" value="[-19.9491412, -43.9504669]">
+    <input type="submit" value="Post">
+  </form>
+</div>
+>>>>>>> master

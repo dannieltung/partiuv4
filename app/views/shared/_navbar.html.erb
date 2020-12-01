@@ -1,8 +1,10 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
     <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606503672/logopartiu-10_ndn9pw.png" %>
-    <%= '#PARTIU' %>
   <% end %>
+  <div class="txt-logo">
+    <%= '#PARTIU' %>
+  </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <% if user_signed_in? %>
       <%= cl_image_tag user_image(current_user), width: 40, height: 40, radius: "max", crop: :thumb, gravity: :face, class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
