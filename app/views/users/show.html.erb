@@ -8,6 +8,7 @@
   <%= simple_form_for [@user] do |f| %>
     <%= f.input :first_name, label: 'First Name' %>
     <%= f.input :last_name, label: 'Last Name' %>
+    <%= f.input :photo, as: :file, label: 'Photo' %>
     <!-- <= f.input :photo, as: :file, label: 'Photo' %> -->
     <div class="btn-flex txt-sentances">
       <%= f.submit "Update", class: 'btn-blue' %>
