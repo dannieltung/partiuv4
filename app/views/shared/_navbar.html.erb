@@ -6,9 +6,9 @@
     <%= '#PARTIU' %>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <% if user_signed_in? %>
-      <%= cl_image_tag user_image(current_user), width: 40, height: 40, radius: "max", crop: :thumb, gravity: :face, class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <% end %>
+    <!-- < if user_signed_in? %> -->
+      <!-- <= cl_image_tag user_image(current_user), width: 40, height: 40, radius: "max", crop: :thumb, gravity: :face, class: "avatar-bordered", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %> -->
+    <!-- < end %> -->
     <div class="btn-sand" onclick="this.classList.toggle('change')">
       <div class="bar1"></div>
       <div class="bar2"></div>
@@ -28,8 +28,8 @@
           <%= cl_image_tag user_image(current_user), width: 40, height: 40, radius: "max", crop: :thumb, gravity: :face, class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Account", user_path(current_user), class: "dropdown-item" %>
-            <%= link_to "My Favorites Spots", favorites_path, class: "dropdown-item" %>
             <%= link_to "Post!", new_spot_path, class: "dropdown-item" %>
+            <%= link_to "My Favorites Spots", favorites_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
