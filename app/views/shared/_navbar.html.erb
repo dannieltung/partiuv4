@@ -5,7 +5,7 @@
   <div class="txt-logo">
     <%= '#PARTIU' %>
   </div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="photo-user navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <% if user_signed_in? %>
       <%= cl_image_tag user_image(current_user), width: 40, height: 40, radius: "max", crop: :thumb, gravity: :face, class: "dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
     <% end %>
@@ -16,7 +16,7 @@
     </div>
   </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="txt-menu navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item d-md-none d-sm-none">
           <%= link_to "Account", user_path(current_user), class: "nav-link" %>

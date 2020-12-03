@@ -90,4 +90,15 @@
   z-index: 1;
 }
 
+.btn-post {
+  display: block;
+  width: 60%;
+  cursor: pointer;
+  height: 40px;
+  background-color: #02343f;
+  color: white;
+  background-image: url('partiu/post_icon.png');
+  background-repeat: no-repeat;
+  background-size: 30px;
+}
 
