@@ -9,12 +9,12 @@
     <%= f.simple_fields_for :crowdnesses do |g| %>
       <%= g.hidden_field :user_id, value: current_user.id %>
       <%= g.input_field :level, collection: ['Low', 'Medium', 'Crowded'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
-      <p></p>
+      <br>
       <%= g.input :description, label: 'Description' %>
       <%= g.input :photos, as: :file, input_html: { multiple: true } %>
     <% end %>
-</div>
-    <div class="txt-items btn-flex">
-      <%= f.submit "Add ✔", class: 'btn-blue' %>
-    </div>
-  <% end %>
+  </div>
+  <div class="txt-items btn-flex">
+    <%= f.submit "Add ✔", class: 'btn-blue' %>
+  </div>
+<% end %>

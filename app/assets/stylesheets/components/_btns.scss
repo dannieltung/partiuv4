@@ -122,6 +122,18 @@
   z-index: 1;
 }
 
+
+.btn-circle {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.33;
+    background-color: #54e346;
+}
+
 .btn-post {
   // box-shadow:inset 0px -3px 7px 0px #3dc21b;
   background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
