@@ -49,18 +49,34 @@
 
 .btn-blue {
   font-size: 36px;
-  background-color: transparent;
   // background-color: #467ede;
   border: transparent;
-  // box-shadow: 0px 0px 16px 2px #00000030, #3567e2;
-  color: #18b5e9;
+  background:linear-gradient(to bottom, #18b5e9 5%, #3567e2 100%);
+  color: white;
   text-decoration: none;
   text-align: center;
-  border-radius: 24px;
+  border-radius: 2px;
   padding-top: 4px;
-  padding-right: 16px;
+  padding-right: 32px;
   padding-bottom: 4px;
-  padding-left: 16px;
+  padding-left: 32px;
+  margin: 8px;
+  transition-duration: 0.4s;
+}
+
+.btn-yellow {
+  font-size: 36px;
+  // background-color: #e1d107;
+  background:linear-gradient(to bottom, #f7e71e 5%, #e1d107 100%);
+  border: transparent;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 32px;
+  padding-left: 32px;
   margin: 8px;
   transition-duration: 0.4s;
 }
@@ -72,6 +88,14 @@
   background-image: url('partiu/update_icon.png');
 }
 
+.icon-image {
+  // height: 20px;
+  margin: 8px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-image: url('partiu/image_icon.png');
+}
+
 #icon-password {
   background-image: url('partiu/password_icon.png');
 }
@@ -80,25 +104,42 @@
   background-image: url('partiu/guy_icon.png');
 }
 
+#post_icon {
+  color: white;
+  background-image: url('partiu/post_icon.png');
+  background-repeat: no-repeat;
+  background-size: 56px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
 .btn-post-position {
   position: relative;
   display: flex;
   justify-content: center;
-  bottom: 40px;
-  padding-left: 8px;
-  padding-right: 8px;
+  bottom: 94px;
   z-index: 1;
 }
 
 .btn-post {
-  display: block;
-  width: 60%;
-  cursor: pointer;
-  height: 40px;
-  background-color: #02343f;
-  color: white;
-  background-image: url('partiu/post_icon.png');
-  background-repeat: no-repeat;
-  background-size: 30px;
+  // box-shadow:inset 0px -3px 7px 0px #3dc21b;
+  background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+  border-radius:48px;
+  border-color: transparent;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  padding:12px 24px;
+  text-decoration:none;
+}
+
+.btn-post:hover {
+  background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+}
+
+.btn-post:active {
+  position:relative;
+  top:1px;
 }
 
