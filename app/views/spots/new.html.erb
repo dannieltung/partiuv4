@@ -7,7 +7,7 @@
   <!-- <= f.input :address, label: 'Address' %> -->
   <%= f.simple_fields_for :crowdnesses do |g| %>
     <%= g.hidden_field :user_id, value: current_user.id %>
-    <%= g.input_field :level, collection: ['Not Crowded', 'Some Crowding', 'Crowded'], as: :radio_buttons %>
+    <%= g.input_field :level, collection: ['Not Crowded', 'Some Crowding', 'Crowded'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
     <%= g.input :description, label: 'Description' %>
     <%= g.input :photos, as: :file, input_html: { multiple: true } %>
   <% end %>
