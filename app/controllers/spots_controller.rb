@@ -8,6 +8,7 @@ class SpotsController < ApplicationController
                                                                                              city: a.first.data['address']['city'],
                                                                                              state: a.first.data['address']['state'])
     # cria uma instancia isolada
+
     @spot.crowdnesses.build
     # cria uma instancia associada
   end
@@ -34,7 +35,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:address, :name, crowdnesses_attributes: [:level, :description, :user_id, photos: []])
+    params.require(:spot).permit(:city, :state, :street, :number, :address, :name, crowdnesses_attributes: [:level, :description, :user_id, photos: []])
   end
 
 end
