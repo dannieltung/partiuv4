@@ -8,6 +8,7 @@ class SpotsController < ApplicationController
                                                                                              city: a.first.data['address']['city'],
                                                                                              state: a.first.data['address']['state'])
     # cria uma instancia isolada
+
     @spot.crowdnesses.build
     # cria uma instancia associada
   end
