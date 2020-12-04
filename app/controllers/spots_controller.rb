@@ -2,14 +2,21 @@ class SpotsController < ApplicationController
 
   def new
     a = Geocoder.search([params[:latitude], params[:longitude]])
-    params[:latitude].nil? || params[:latitude].empty? ? @spot = Spot.new : @spot = Spot.new(street: a.first.data['address']['road'], number: a.first.data['address']['house_number'], city: a.first.data['address']['city'], state: a.first.data['address']['state'])
+
+    params[:latitude].nil? || params[:latitude].empty? ? @spot = Spot.new : @spot = Spot.new(street: a.first.data['address']['road'],
+                                                                                             number: a.first.data['address']['house_number'],
+                                                                                             city: a.first.data['address']['city'],
+                                                                                             state: a.first.data['address']['state'])
     # cria uma instancia isolada
     @spot.crowdnesses.build
     # cria uma instancia associada
   end
 
   def create
-    address = [params[:spot][:street], params[:spot][:number], params[:spot][:city], params[:spot][:state], "Brasil"].join(" ")
+    address = [params[:spot][:street],
+               params[:spot][:number],
+               params[:spot][:city], params[:spot][:state],
+               "Brasil"].join(" ")
     @spot = Spot.new(spot_params)
     @spot.user = current_user
     @spot.address = address

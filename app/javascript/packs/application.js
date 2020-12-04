@@ -16,7 +16,7 @@ import "bootstrap";
 
 // // Internal imports
 import { initMapbox } from 'plugins/init_mapbox';
-
+import { showPreview } from './img_preview';
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -27,7 +27,11 @@ import { initMapbox } from 'plugins/init_mapbox';
 // const imagePath = (name) => images(name, true)
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-})
+
+  $("#spot_crowdnesses_attributes_0_photos").change(function() {
+    showPreview(this);
+  })
+});
 
 // import { initMapbox } from '../plugins/init_mapbox';
 // import { initAutocomplete } from '../plugins/init_autocomplete';
