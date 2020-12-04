@@ -13,8 +13,10 @@
       <%= g.input :description, label: 'Description' %>
       <%= g.input :photos, as: :file, input_html: { multiple: true } %>
     <% end %>
-  </div>
-  <div class="txt-items btn-flex">
-    <%= f.submit "Add ✔", class: 'btn-blue' %>
-  </div>
-<% end %>
+</div>
+    <div class="txt-items btn-flex">
+      <%= f.submit "Add ✔", class: 'btn-blue' %>
+    </div>
+  <% end %>
+
+  <img id='preview' >
