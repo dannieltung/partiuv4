@@ -2,6 +2,7 @@
   justify-content: space-between;
   // background: white;
   background-color: #02343F;
+  background: linear-gradient(to bottom, #02343F 5%, #0ca1c2 100%)
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -16,8 +17,8 @@
   margin: 0;
 }
 
-.photo-user {
-  display: flex;
-  border-color: 2px solid white;
-  border-radius: 8px;
+
+#navbarDropdown {
+  border-radius: 50%;
 }
+
