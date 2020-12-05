@@ -1,3 +1,6 @@
+<div class="icon_home">
+  <%= link_to "GoTo Home", root_path %>
+</div>
 <%= simple_form_for [@spot, @crowdness] do |f| %>
   <%= f.input_field :level, collection: ['Low', 'Medium', 'Crowded'], as: :radio_buttons %>
   <%= f.input :description, label: 'Description' %>
