@@ -13,12 +13,12 @@
       <br>
     </div>
       <%= g.input :description, placeholder: 'Description', label: false %>
-    <div class="photo-tag">
-      <div class="icon-image">
-        <img class="photo-tag" id='preview'>
-      </div>
-      <%= g.input :photos, as: :file, input_html: { multiple: true } %>
+
+    <div class="icon-image">
+      <img class="photo-tag" id='preview'>
     </div>
+    <%= g.input :photos, as: :file, input_html: { multiple: true }, name: 'test' %>
+
     <% end %>
     <div class="txt-items btn-flex">
       <%= f.submit "Add ✔", class: 'btn-blue' %>
