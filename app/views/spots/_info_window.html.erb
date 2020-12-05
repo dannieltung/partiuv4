@@ -1,12 +1,10 @@
-<!-- < require 'pry-byebug' %> -->
-<div class="">
-  <p><%= link_to spot.name, spot_path(spot) %></p>
-  <p><%= link_to 'Rate!', new_spot_crowdness_path(spot) %></p>
-  <p> <%= spot.crowdnesses.last.level %> <%= ((Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes %> minutes ago </p>
-  <hr>
-  <% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
-    <!-- <p>= link_to "Posted on #{crowdness.created_at.strftime("%d/%m/%Y %I:%M %p")}", spot_crowdness_path(spot, crowdness) %></p>
-    <p>Level: = crowdness.level %></p> -->
-    <p>Description: <%= crowdness.description %></p>
-  <% end %>
-</div>
+<p><%= link_to spot.name, spot_path(spot) %> <%= link_to 'Rate!', new_spot_crowdness_path(spot) %></p>
+<!-- < if (Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes > 60 %> -->
+<p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes} minutes ago" %></p>
+<!-- < else %> -->
+<p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.hour} hour(s) ago" %></p>
+<!-- < end %> -->
+<hr>
+<% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
+  <p>Description: <%= crowdness.description %></p>
+<% end %>
