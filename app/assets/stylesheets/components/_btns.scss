@@ -29,26 +29,35 @@
   justify-content: center;
 }
 
-.btn-ok {
-  font-size: 36px;
-  background-color: transparent;
-  // background-color: #8de68d;
-  border: transparent;
-  // box-shadow: 0px 0px 16px 2px #00000030;
-  color: #1cf9be;
-  text-decoration: none;
-  text-align: center;
-  border-radius: 24px;
-  padding-top: 4px;
-  padding-right: 16px;
-  padding-bottom: 4px;
-  padding-left: 16px;
-  transition-duration: 0.4s;
-  margin: 8px;
+.btn-home {
+  box-shadow:inset 0px 1px 0px 0px #a4e271;
+  background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+  background-color:#89c403;
+  border-radius:6px;
+  border:1px solid #74b807;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #528009;
 }
 
+.btn-home:hover {
+  background:linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+  background-color:#77a809;
+}
+.btn-home:active {
+  position:relative;
+  top:1px;
+}
+
+
 .btn-blue {
-  font-size: 36px;
+  font-size: 24px;
   // background-color: #467ede;
   border: transparent;
   background:linear-gradient(to bottom, #18b5e9 5%, #3567e2 100%);
@@ -81,42 +90,7 @@
   transition-duration: 0.4s;
 }
 
-.icon-update {
-  // height: 20px;
-  background-repeat: no-repeat;
-  background-size: 30px;
-  background-image: url('partiu/update_icon.png');
-}
 
-.icon-image {
-  // height: 20px;
-  margin: 8px;
-  background-repeat: no-repeat;
-  background-size: 32px;
-  background-image: url('partiu/image_icon.png');
-}
-
-.photo-tag {
-  image-size: 30px
-}
-
-#icon-password {
-  background-image: url('partiu/password_icon.png');
-}
-
-#icon-guy {
-  background-image: url('partiu/guy_icon.png');
-}
-
-#post_icon {
-  color: white;
-  background-image: url('partiu/post_icon.png');
-  background-repeat: no-repeat;
-  background-size: 56px;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-}
 
 .btn-post-position {
   position: relative;
@@ -125,7 +99,6 @@
   bottom: 164px;
   z-index: 1;
 }
-
 
 .btn-circle {
     width: 70px;

@@ -1,4 +1,6 @@
-<%= link_to "GoTo Home", root_path %>
+<div class="btn-home">
+  <%= link_to "GoTo Home", root_path, class: 'icon_home' %>
+</div>
 <div class="txt-items card">
   <%= simple_form_for @spot do |f| %>
     <%= f.input :name, placeholder: 'Name',label: false %>
@@ -14,12 +16,11 @@
         <br>
       </div>
       <%= g.input :description, placeholder: 'Description', label: false %>
-      <div class="photo-tag">
         <div class="icon-image">
           <img class="photo-tag" id='preview'>
         </div>
         <%= g.input :photos, as: :file, input_html: { multiple: true } %>
-      </div>
+
     <% end %>
     <div class="txt-items btn-flex">
       <%= f.submit "Add ✔", class: 'btn-blue' %>

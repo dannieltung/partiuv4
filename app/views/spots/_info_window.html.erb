@@ -1,3 +1,4 @@
+
 <p><%= link_to spot.name, spot_path(spot) %> <%= link_to 'Crowd!', new_spot_crowdness_path(spot), class: "btn btn-sm btn-warning py-0" %></p>
 <!-- < require "pry-byebug" %>
 < binding.pry %> -->
@@ -10,6 +11,10 @@
 <% end %>
 <hr>
 <p>Comments</p>
-<% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
-  <p><%= "#{crowdness.created_at.strftime("%H:%M")} - #{crowdness.description}" %></p>
+<div class="icon-fex">
+  <div class="icon-guy"></div>
+  <% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
+    <p><%= "#{crowdness.created_at.strftime("%H:%M")} - #{crowdness.description}" %></p>
+</div>
 <% end %>
+

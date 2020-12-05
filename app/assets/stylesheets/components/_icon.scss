@@ -1,0 +1,52 @@
+.icon-image {
+  // height: 20px;
+  margin: 8px;
+  background-repeat: no-repeat;
+  background-size: 32px;
+  background-image: url('partiu/image_icon.png');
+}
+
+.photo-tag {
+
+  image-size: 30px;
+}
+
+.icon-update {
+  // height: 20px;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-image: url('partiu/update_icon.png');
+}
+
+.icon-password {
+  background-image: url('partiu/password_icon.png');
+}
+
+.icon-guy {
+  background-image: url('partiu/guy_icon.png');
+  background-size: 32px;
+  background-repeat: no-repeat;
+}
+
+.post_icon {
+  width: 20%;
+  height: 24px;
+  color: white;
+  background-image: url('partiu/post_icon.png');
+  background-repeat: no-repeat;
+  background-size: 56px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.icon-fex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon_home {
+  background-image: url('partiu/home_icon.png');
+  background-size: 32px;
+  background-repeat: no-repeat;
+}
