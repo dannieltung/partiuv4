@@ -7,15 +7,21 @@
     <%= f.input :state,  placeholder: 'State', label: false %>
     <!-- <= f.input :address, label: 'Address' %> -->
     <%= f.simple_fields_for :crowdnesses do |g| %>
+    <div class="crowed">
       <%= g.hidden_field :user_id, value: current_user.id %>
       <%= g.input_field :level, collection: ['Low', 'Medium', 'Crowded'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
       <br>
+    </div>
       <%= g.input :description, placeholder: 'Description', label: false %>
+    <div class="photo-tag">
+      <div class="icon-image">
+        <img class="photo-tag" id='preview'>
+      </div>
       <%= g.input :photos, as: :file, input_html: { multiple: true } %>
+    </div>
     <% end %>
     <div class="txt-items btn-flex">
       <%= f.submit "Add ✔", class: 'btn-blue' %>
     </div>
   <% end %>
-  <img id='preview' >
 </div>

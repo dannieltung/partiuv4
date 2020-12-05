@@ -3,8 +3,14 @@
   max-width: 500px;
   margin: auto;
   margin-top: 12px;
-  margin-top: 12px;
-  padding: 4px;
+  margin-bottom: 12px;
+  padding: 8px;
   border: transparent;
+  border-radius: 2px;
   background-color: transparent;
+}
+
+.crowed {
+  display: flex;
+  justify-content: center;
 }

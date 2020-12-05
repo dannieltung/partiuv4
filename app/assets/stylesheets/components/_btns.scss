@@ -92,8 +92,12 @@
   // height: 20px;
   margin: 8px;
   background-repeat: no-repeat;
-  background-size: 30px;
+  background-size: 32px;
   background-image: url('partiu/image_icon.png');
+}
+
+.photo-tag {
+  image-size: 30px
 }
 
 #icon-password {
@@ -118,7 +122,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  bottom: 94px;
+  bottom: 164px;
   z-index: 1;
 }
 
