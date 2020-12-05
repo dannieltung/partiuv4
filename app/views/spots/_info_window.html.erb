@@ -1,10 +1,13 @@
 <p><%= link_to spot.name, spot_path(spot) %> <%= link_to 'Rate!', new_spot_crowdness_path(spot) %></p>
-<!-- < if (Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes > 60 %> -->
-<p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes} minutes ago" %></p>
-<!-- < else %> -->
-<p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.hour} hour(s) ago" %></p>
-<!-- < end %> -->
+<!-- < require "pry-byebug" %>
+< binding.pry %> -->
+<% if (Time.now - spot.crowdnesses.last.created_at).to_i/1.minutes < 60 %>
+  <p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes} minutes ago" %></p>
+<% else %>
+  <p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.hour} hour(s) ago" %></p>
+<% end %>
 <hr>
+<p>Comments</p>
 <% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
-  <p>Description: <%= crowdness.description %></p>
+  <p><%= "#{crowdness.created_at.strftime("%H:%M")} - #{crowdness.description}" %></p>
 <% end %>
