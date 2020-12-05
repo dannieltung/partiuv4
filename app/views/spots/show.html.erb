@@ -1,19 +1,23 @@
-<div class="container">
-  <p> Name: <%= @spot.name %> </p>
-  <p> Address: <%= @spot.address %> </p>
+<div class="container txt-thin">
+  <div class="card">
+    <p> Name: <%= @spot.name %> </p>
+    <p> Address: <%= @spot.address %> </p>
+  </div>
   <hr>
   <% @spot.crowdnesses.each do |crowdness| %>
-    <p>Posted on <%= crowdness.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
-    <p>Level: <%= crowdness.level %></p>
-    <p>Description: <%= crowdness.description %></p>
-    <div class="carrossel">
-      <ul>
-        <% crowdness.photos.each do |photo| %>
-          <li>
-            <%= cl_image_tag photo.key, class: "ima_tag", height: 250, width: 400 ,crop: :fill %>
-          </li>
-        <% end %>
-      </ul>
+    <div class="card">
+      <p>Posted on <%= crowdness.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
+      <p>Level: <%= crowdness.level %></p>
+      <p>Description: <%= crowdness.description %></p>
+      <div class="carrossel">
+        <ul>
+          <% crowdness.photos.each do |photo| %>
+            <li>
+              <%= cl_image_tag photo.key, class: "ima_tag", height: 250, width: 400 ,crop: :fill %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
     <hr>
   <% end %>
