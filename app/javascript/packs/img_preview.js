@@ -6,7 +6,7 @@ function showPreview(input) {
     fileReader.onload = function (event) {
       $("#preview").attr("src", event.target.result);
     };
-    event.target.removeClass();
+
     fileReader.readAsDataURL(input.files[0]);
   }
   console.log(input)
