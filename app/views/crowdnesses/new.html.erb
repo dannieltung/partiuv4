@@ -5,9 +5,19 @@
 </div>
 <div class="txt-items card">
   <%= simple_form_for [@spot, @crowdness] do |f| %>
-    <%= f.input_field :level, collection: ['Low', 'Medium', 'Crowded'], as: :radio_buttons %>
+    <div class="crowded">
+      <%= f.input_field :level, collection: ['Low', 'Medium', 'Crowded'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
+    </div>
+    <br>
     <%= f.input :description, placeholder: 'Description', label: false %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit "Add ✔", class: 'btn-blue' %>
+    <div class="icon-photo">
+      <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'custom-file-input' }, label: false %>
+    </div>
+    <div class="icon-image">
+      <img class="photo-tag" id='preview'>
+    </div>
+    <div class="txt-items btn-flex">
+      <%= f.submit "Add ✔", class: 'btn-blue' %>
+    </div>
   <% end %>
 </div>
