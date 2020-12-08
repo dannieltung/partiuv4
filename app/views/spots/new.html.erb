@@ -1,6 +1,6 @@
-<div class="btn-home">
-  <%= link_to "Home", root_path %>
-</div>
+<%= link_to root_path, class: "navbar-brand" do %>
+  <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606503672/logopartiu-10_ndn9pw.png" %>
+<% end %>
 <div class="txt-items card">
   <%= simple_form_for @spot do |f| %>
     <%= f.input :name, placeholder: 'Name',label: false %>
@@ -16,11 +16,10 @@
         <br>
       </div>
       <%= g.input :description, placeholder: 'Description', label: false %>
-        <div class="icon-image">
-          <img class="photo-tag" id='preview'>
-        </div>
-        <%= g.input :photos, as: :file, input_html: { multiple: true } %>
-
+      <div class="icon-image">
+        <img class="photo-tag" id='preview'>
+      </div>
+      <%= g.input :photos, as: :file, input_html: { multiple: true } %>
     <% end %>
     <div class="txt-items btn-flex">
       <%= f.submit "Add ✔", class: 'btn-blue' %>
