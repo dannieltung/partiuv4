@@ -31,19 +31,19 @@
 
 .btn-home {
   border: transparent;
-  background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
-  border-radius:6px;
+  box-shadow:inset 0px 1px 0px 0px #caefab;
+  background:linear-gradient(to bottom, #77d42a 5%, #5cb811 100%);
+  background-color:#77d42a;
+  border:1px solid #268a16;
   display:inline-block;
+  cursor:pointer;
   text-decoration: none;
   text-align: center;
   cursor:pointer;
   color:#ffffff;
   margin-top: 8px;
-  border-radius: 2px;
-  padding-top: 4px;
-  padding-right: 32px;
-  padding-bottom: 4px;
-  padding-left: 32px;
+  border-radius: 50%;
+  padding: 8px;
   text-decoration:none;
   text-shadow:0px 1px 0px #528009;
 }
@@ -68,7 +68,7 @@
   position: relative;
   display: flex;
   justify-content: center;
-  bottom: 183px;
+  top: 580px;
   z-index: 1;
 }
 
@@ -84,14 +84,17 @@
 }
 
 .btn-post {
-  // box-shadow:inset 0px -3px 7px 0px #3dc21b;
+  box-shadow:inset 0px -3px 7px 0px #3dc21b;
   background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+  border:1px solid #268a16;
   border-radius:48px;
-  border-color: transparent;
   display:inline-block;
   cursor:pointer;
   color:#ffffff;
-  padding:12px 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
   text-decoration:none;
 }
 
