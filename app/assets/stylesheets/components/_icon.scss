@@ -1,14 +1,12 @@
 .icon-image {
-  // height: 20px;
   margin: 8px;
-  background-repeat: no-repeat;
-  background-size: 32px;
-  // background-image: url('partiu/image_icon.png');
+  display: flex;
+  justify-content: center;
 }
 
 .photo-tag {
-
-  image-size: 30px;
+  height: 240px;
+  box-shadow: 0px 0px 6px 0px #15220b;
 }
 
 .icon-update {
@@ -45,8 +43,6 @@
   justify-content: space-around;
 }
 
-.icon_home {
-  background-image: url('partiu/home_icon.png');
-  background-size: 32px;
-  background-repeat: no-repeat;
+.icon-home {
+  height: 40px;
 }
