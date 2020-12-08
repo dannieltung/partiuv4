@@ -11,10 +11,7 @@
   <% end %>
   <hr>
   <p>Comments</p>
-  <div class="icon-fex">
-    <div class="icon-guy"></div>
-    <% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
-      <p><%= "#{crowdness.created_at.strftime("%H:%M")} - #{crowdness.description}" %></p>
-    </div>
+  <% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
+    <ul><%= "#{crowdness.created_at.strftime("%H:%M")} - #{crowdness.description}" %></ul>
   <% end %>
 <% end %>

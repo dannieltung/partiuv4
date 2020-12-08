@@ -17,9 +17,21 @@
 <form action="/spots/new">
   <input type="hidden" name="latitude" id="user_current_latitude" >
   <input type="hidden" name="longitude" id="user_current_longitude" >
-
-    <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606503672/logopartiu-10_ndn9pw.png", class: "map-icon" %>
-
+  <!-- <= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606503672/logopartiu-10_ndn9pw.png", class: "map-icon" %> -->
+  <div class="dropdown">
+    <div type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1607390851/logopartiu_ctwlft.png", class: "map-icon" %>
+    </div>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+      <% if user_signed_in? %>
+        <%= link_to "Account", user_path(current_user), class: "nav-link" %>
+        <%= link_to "My Favorites Spots", favorites_path, class: "nav-link" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link" %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% end %>
+    </div>
+  </div>
   <div class="btn-post-position txt-items">
     <input class="btn-post" type="submit" value="Post">
   </div>
