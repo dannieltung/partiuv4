@@ -29,3 +29,16 @@
   font-size: 24px;
 }
 
+.mapboxgl-ctrl-geocoder {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    position: relative;
+    background-color: #fff;
+    width: 385px !important;
+    min-width: 240px;
+    z-index: 1;
+    border-radius: 25px;
+    transition: width .25s, min-width .25s;
+}
+
