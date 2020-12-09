@@ -1,0 +1,17 @@
+.splash {
+  height: 300px;
+  background-image: url(app/assets/images/partiu/home_icon.png);
+  background-repeat: no-repeat;
+  animation: splash 4s 1 forwards;
+  // transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+}
+
+@keyframes splash {
+  0% { opacity: 1; }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+

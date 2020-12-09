@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :spots, only: [:new, :create, :show] do
     resources :crowdnesses, only: [:new, :create, :show]
   end
+  # get '/splash', to: 'pages#splash'
 end
