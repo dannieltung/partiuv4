@@ -1,4 +1,3 @@
-
 <style>
   .marker {
     background-size: cover;
@@ -11,7 +10,7 @@
       style="width: 100%; height: 730px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  <form action="/spots/new">
+  <form action="/spots/new" data-remote="true" >
     <input type="hidden" name="latitude" id="user_current_latitude" >
     <input type="hidden" name="longitude" id="user_current_longitude" >
     <!-- <= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606503672/logopartiu-10_ndn9pw.png", class: "map-icon" %> -->
@@ -35,3 +34,9 @@
   </form>
 </div>
 <!-- <p id="demo"></p> -->
+<div class="modal fade" id="spotModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+    </div>
+  </div>
+</div>
