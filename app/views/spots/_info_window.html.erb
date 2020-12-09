@@ -1,5 +1,11 @@
 <% unless spot.crowdnesses.empty? %>
-  <p><%= link_to spot.name, spot_path(spot) %> <%= link_to 'Crowd!', new_spot_crowdness_path(spot), class: "btn btn-sm btn-warning py-0" %></p>
+
+  <div class="d-flex justify-content-between">
+    <p class="txt-infowindow"><%= link_to spot.name, spot_path(spot) %></p>
+    <%= link_to new_spot_crowdness_path(spot) do %>
+      <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1607399415/home_icon_white_ipejhz.png", class: 'btn-rate' %>
+    <% end %>
+  </div>
 
   <% if (Time.now - spot.crowdnesses.last.created_at).to_i/1.minutes < 60 %>
     <p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes} min ago" %></p>
@@ -13,4 +19,9 @@
   <% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
     <ul><%= "#{crowdness.created_at.strftime("%H:%M")} - #{crowdness.description}" %></ul>
   <% end %>
+
+<% else %>
+
+<%= "my location" %>
+
 <% end %>
