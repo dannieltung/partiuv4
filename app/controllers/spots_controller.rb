@@ -14,6 +14,7 @@ class SpotsController < ApplicationController
   end
 
   def create
+    # o ajax vai procurar o nome da function e não o do método.
     address = [params[:spot][:street],
                params[:spot][:number],
                params[:spot][:city], params[:spot][:state],
@@ -21,11 +22,12 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     @spot.user = current_user
     @spot.address = address
-    if @spot.save!
-      redirect_to spot_path(@spot), notice: 'Spot Created!'
-    else
-      render :new
-    end
+    @spot.save
+    # if @spot.save!
+    #   redirect_to spot_path(@spot), notice: 'Spot Created!'
+    # else
+    #   render :new
+    # end
   end
 
   def show

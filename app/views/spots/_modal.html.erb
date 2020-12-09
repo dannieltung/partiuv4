@@ -1,0 +1,38 @@
+<div class="txt-items card">
+  <%= simple_form_for spot, remote: true do |f| %>
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">New Spot</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <%= f.input :name, placeholder: 'Name',label: false %>
+      <%= f.input :street, placeholder: 'Street', label: false %>
+      <%= f.input :number, placeholder: 'Number', label: false %>
+      <%= f.input :city, placeholder: 'City', label: false %>
+      <%= f.input :state,  placeholder: 'State', label: false %>
+      <!-- <= f.input :address, label: 'Address' %> -->
+      <%= f.simple_fields_for :crowdnesses do |g| %>
+        <div class="crowded">
+          <%= g.hidden_field :user_id, value: current_user.id %>
+          <%= g.input_field :level, collection: ['Low', 'Medium', 'Crowded'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
+        </div>
+        <br>
+        <%= g.input :description, placeholder: 'Description', label: false %>
+        <div class="icon-photo">
+          <%= g.input :photos, as: :file, input_html: { multiple: true, class: 'custom-file-input' }, label: false %>
+        </div>
+        <!-- <= g.input :photos, as: :file, input_html: { class: 'custom-file-input' } %> -->
+        <div class="icon-image">
+          <img class="photo-tag" id='preview'>
+        </div>
+      <% end %>
+    </div>
+    <div class="modal-footer">
+      <div class="txt-items btn-flex">
+        <%= f.submit "Add ✔", class: 'btn-blue' %>
+      </div>
+    </div>
+  <% end %>
+</div>

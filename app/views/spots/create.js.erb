@@ -1,0 +1,8 @@
+<% if @spot.errors.any? %>
+  $('#spotModal .modal-content').html('<%= j render "spots/modal", spot: @spot %>');
+<% else %>
+  $('#spotModal').modal('hide');
+  // $('#spotModal').on('hidden.bs.modal', function () {
+   // window.location.reload();
+  // });
+<% end %>
