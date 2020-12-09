@@ -8,9 +8,12 @@
   <% else %>
     <p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.hour} hours ago" %></p>
   <% end %>
+
   <hr>
+
   <p>Comments</p>
   <% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
     <ul><%= "#{crowdness.created_at.strftime("%H:%M")} - #{crowdness.description}" %></ul>
   <% end %>
+
 <% end %>
