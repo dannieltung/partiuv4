@@ -1,3 +1,4 @@
+<%= render partial: "splash" %>
 
 <style>
   .marker {
@@ -7,6 +8,7 @@
     cursor: pointer;
   }
 </style>
+
 <div id="map"
       style="width: 100%; height: 730px;"
       data-markers="<%= @markers.to_json %>"
@@ -14,7 +16,6 @@
   <form action="/spots/new">
     <input type="hidden" name="latitude" id="user_current_latitude" >
     <input type="hidden" name="longitude" id="user_current_longitude" >
-    <!-- <= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606503672/logopartiu-10_ndn9pw.png", class: "map-icon" %> -->
     <div class="dropdown">
       <div type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1607397266/logopartiu_ancgnx.png", class: "map-icon" %>
@@ -34,4 +35,4 @@
     </div>
   </form>
 </div>
-<!-- <p id="demo"></p> -->
+
