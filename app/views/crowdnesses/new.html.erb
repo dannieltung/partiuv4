@@ -6,7 +6,7 @@
 <div class="txt-items card">
   <%= simple_form_for [@spot, @crowdness] do |f| %>
     <div class="crowded">
-      <%= f.input_field :level, collection: ['Low', 'Medium', 'Crowded'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
+      <%= f.input_field :level, collection: ['Safe', 'Atention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
     </div>
     <br>
     <%= f.input :description, placeholder: 'Description', label: false %>

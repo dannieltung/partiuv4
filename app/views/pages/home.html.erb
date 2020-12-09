@@ -1,3 +1,4 @@
+<%= render partial: "splash" %>
 <style>
   .marker {
     background-size: cover;
@@ -13,7 +14,6 @@
   <form action="/spots/new" data-remote="true" >
     <input type="hidden" name="latitude" id="user_current_latitude" >
     <input type="hidden" name="longitude" id="user_current_longitude" >
-    <!-- <= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606503672/logopartiu-10_ndn9pw.png", class: "map-icon" %> -->
     <div class="dropdown">
       <div type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1607397266/logopartiu_ancgnx.png", class: "map-icon" %>
@@ -29,7 +29,7 @@
       </div>
     </div>
     <div class="btn-post-position txt-items">
-      <input class="btn-post" type="submit" value="Post">
+      <input class="btn-post" type="submit" value="Spot it!">
     </div>
   </form>
 </div>
