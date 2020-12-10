@@ -5,14 +5,13 @@
 </div>
 <div class="container txt-thin">
   <div class="card">
-    <p> Name: <%= @spot.name %> </p>
-    <p> Address: <%= @spot.address %> </p>
+    <p> <%= @spot.name %> </p>
+    <p> <%= "#{@spot.street}, #{@spot.number}" %> </p>
+    <p> <%= "#{@spot.city} - #{@spot.state}" %> </p>
   </div>
-  <hr>
   <% @spot.crowdnesses.each do |crowdness| %>
     <div class="card">
-      <p>Posted on <%= crowdness.created_at.strftime("%d/%m/%Y %I:%M %p") %></p>
-      <p>Level: <%= crowdness.level %></p>
+      <p><%= "#{crowdness.level} on #{crowdness.created_at.strftime("%d/%m/%Y")} at #{crowdness.created_at.strftime("%I:%M %p")}" %></p>
       <p>Description: <%= crowdness.description %></p>
       <div class="carrossel">
         <ul>
@@ -24,6 +23,5 @@
         </ul>
       </div>
     </div>
-    <hr>
   <% end %>
 </div>
