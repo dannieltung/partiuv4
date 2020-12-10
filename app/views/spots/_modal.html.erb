@@ -16,7 +16,7 @@
       <%= f.simple_fields_for :crowdnesses do |g| %>
         <div class="crowded">
           <%= g.hidden_field :user_id, value: current_user.id %>
-          <%= g.input_field :level, collection: ['Low', 'Medium', 'Crowded'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
+          <%= g.input_field :level, collection: ['Safe', 'Atention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
         </div>
         <br>
         <%= g.input :description, placeholder: 'Description', label: false %>
