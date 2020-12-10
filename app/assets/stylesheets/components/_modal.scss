@@ -23,6 +23,25 @@ input[type="radio"], input[type="checkbox"] {
     margin-right: 10px;
 }
 
+.modal-dialog {
+    position: relative;
+    width: auto;
+    margin: 1rem;
+    pointer-events: none;
+}
+
+.modal-card {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+    margin: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    padding: 16px;
+    border: transparent;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
 .modal-footer {
     display: flex;
     flex-wrap: wrap;
