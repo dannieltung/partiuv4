@@ -1,7 +1,7 @@
 <div class="txt-items modal-card">
   <%= simple_form_for spot, remote: true do |f| %>
     <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">New Spot</h5>
+      <h5 class="txt-head modal-title" id="exampleModalLabel">New Spot</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -14,9 +14,11 @@
       <%= f.input :state,  placeholder: 'State', label: false %>
       <!-- <= f.input :address, label: 'Address' %> -->
       <%= f.simple_fields_for :crowdnesses do |g| %>
-        <div class="crowded">
+        <div class="txt-danger-normal crowded">
           <%= g.hidden_field :user_id, value: current_user.id %>
-          <%= g.input_field :level, collection: ['Low', 'Medium', 'Crowded'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
+
+          <%= g.input_field :level, collection: ['Safe', 'Atention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
+
         </div>
         <br>
         <%= g.input :description, placeholder: 'Description', label: false %>
@@ -29,10 +31,10 @@
         </div>
       <% end %>
     </div>
-    <div class="modal-footer">
-      <div class="txt-items btn-flex">
-        <%= f.submit "Add ✔", class: 'btn-blue' %>
-      </div>
+<!--     <div class="modal-footer">
+    </div> -->
+    <div class="txt-items btn-flex">
+      <%= f.submit "Add ✔", class: 'btn-blue' %>
     </div>
   <% end %>
 </div>

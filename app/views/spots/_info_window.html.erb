@@ -1,20 +1,28 @@
 <% unless spot.crowdnesses.empty? %>
   <div class="d-flex justify-content-between">
-    <p class="txt-infowindow"><%= link_to spot.name, spot_path(spot) %></p>
-    <%= link_to new_spot_crowdness_path(spot) do %>
-      <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1607399415/home_icon_white_ipejhz.png", class: 'btn-rate' %>
+    <p class="txt-infowindow" style="margin-bottom: 0.5rem;"><%= link_to spot.name, spot_path(spot) %></p>
+    <div class="icon-fex-column">
+      <%= link_to new_spot_crowdness_path(spot) do %>
+        <%= image_tag "partiu/crowd_icon.png", class: 'icon-crowd' %>
+      <% end %>
+      <!-- <p style="margin-top: -8px; margin-bottom: 0;">Update it</p> -->
+    </div>
+  </div>
+  <div class="txt-info-normal">
+    <% if (Time.now - spot.crowdnesses.last.created_at).to_i/1.minutes < 60 %>
+      <!-- <p><= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes} min ago" %></p> -->
+      <p style="margin-bottom: 0.1rem;"><strong><%= "#{spot.crowdnesses.last.level}" %></strong> <%= "#{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes} min ago" %></p>
+    <% elsif (Time.now - spot.crowdnesses.last.created_at).to_i/1.minutes > 60 && (Time.now - spot.crowdnesses.last.created_at).to_i/1.minutes < 120 %>
+      <p style="margin-bottom: 0.1rem;"><strong><%= "#{spot.crowdnesses.last.level}" %></strong> #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.hour} hour ago" %></p>
+    <% else %>
+      <p style="margin-bottom: 0.1rem;"><strong><%= "#{spot.crowdnesses.last.level}" %></strong> <%= "#{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.hour} hours ago" %></p>
     <% end %>
   </div>
-  <% if (Time.now - spot.crowdnesses.last.created_at).to_i/1.minutes < 60 %>
-    <p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes} min ago" %></p>
-  <% elsif (Time.now - spot.crowdnesses.last.created_at).to_i/1.minutes > 60 && (Time.now - spot.crowdnesses.last.created_at).to_i/1.minutes < 120 %>
-    <p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.hour} hour ago" %></p>
-  <% else %>
-    <p><%= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.hour} hours ago" %></p>
-  <% end %>
-  <hr>
-  <p>Comments</p>
-  <% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
-    <ul><%= "#{crowdness.created_at.strftime("%H:%M")} - #{crowdness.description}" %></ul>
-  <% end %>
+  <hr style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+  <div class="txt-info-normal">
+    <p class="txt-info-bold" style="margin-bottom: 0.2rem;">Comments</p>
+    <% spot.crowdnesses.sort_by { |event| [event.created_at] }.reverse.each do |crowdness| %>
+      <ul style="margin-bottom: 0.1rem;"><%= "#{crowdness.created_at.strftime("%H:%M")} - #{crowdness.description}" %></ul>
+    <% end %>
+  </div>
 <% end %>
