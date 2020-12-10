@@ -5,9 +5,9 @@
 </div>
 <div class="container txt-thin">
   <div class="card">
-    <p> <%= @spot.name %> </p>
-    <p> <%= "#{@spot.street}, #{@spot.number}" %> </p>
-    <p> <%= "#{@spot.city} - #{@spot.state}" %> </p>
+    <p><%= @spot.name %></p>
+    <p><%= "#{@spot.street}, #{@spot.number}" %></p>
+    <p><%= "#{@spot.city} - #{@spot.state}" %></p>
   </div>
   <% @spot.crowdnesses.each do |crowdness| %>
     <div class="card">
