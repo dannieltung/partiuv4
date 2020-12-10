@@ -42,8 +42,10 @@
     transition: width .25s, min-width .25s;
 }
 
-
-
+.mapboxgl-canvas {
+    width: 100% !important;
+    height: 736px;
+}
 
 
 

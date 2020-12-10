@@ -22,7 +22,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -2;
+  z-index: 100000;
   width: 100%;
   // background-image: url(app/assets/images/partiu/home_icon.png);
   // background-size: cover;
@@ -67,7 +67,7 @@
     opacity: 1;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
     visibility: hidden;
     background-image: none;
   }
