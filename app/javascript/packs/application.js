@@ -17,6 +17,7 @@ import "bootstrap";
 // // Internal imports
 import { initMapbox } from 'plugins/init_mapbox';
 import { showPreview } from './img_preview';
+import { splash } from './splash';
 
 window.$ = $;
 

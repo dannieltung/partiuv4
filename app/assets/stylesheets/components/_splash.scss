@@ -1,82 +1,74 @@
-// .splash {
-//   // background-size: cover;
-//   // height: 300px;
-//   background-image: url(app/assets/images/partiu/home_icon.png);
-//   background-repeat: no-repeat;
-//   animation: splash 4s 1 forwards;
-//   // transition: visibility 0s linear 0.33s, opacity 0.33s linear;
-// }
+.splash-icon {
+  width: 150px;
+  height: 150px;
+}
 
-// @keyframes splash {
-//   0% { opacity: 1; }
-
-//   100% {
-//     opacity: 0;
-//     visibility: hidden;
-//   }
-// }
-
-#custom-overlay {
+.splash {
   position: fixed;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  z-index: 100000;
   width: 100%;
-  // background-image: url(app/assets/images/partiu/home_icon.png);
-  // background-size: cover;
-  // background-color: black;
-}
-
-.flb {
-  // background-image: url(app/assets/images/partiu/home_icon.png);
-  // background-size: cover;
+  height: 100vh;
   background-color: #06a3ea;
-  height: 100%;
+  z-index: 200;
+  color: white;
+  text-align: center;
+  line-height: 90vh;
+}
+
+.splash.display-nome {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  animation: pulse 1s linear forwards;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100vh;
+  background-color: #06a3ea;
+  z-index: -10;
+  color: white;
+  text-align: center;
+  line-height: 90vh;
+  transition: all 0.5s;
 }
 
-.Aligner-item {
-  max-width: 50%;
-}
-
-.Aligner-item--top {
-  align-self: flex-start;
-}
-
-.Aligner-item--bottom {
-  align-self: flex-end;
-}
-
-#custom-overlay img {
-  display: block;
-  margin: 0 auto;
-  width: 50%;
-  height: auto;
-  animation: animation 3100ms linear infinite both;
-  animation-delay: 5s;
-}
-
-@keyframes pulse {
-  0% {
+@keyframes fadeIn {
+  to {
     opacity: 1;
   }
-  100% {
-    opacity: 1;
-    visibility: hidden;
-    background-image: none;
-  }
 }
 
-.splash-icon {
-  width: 414px;
-  height: 736px;
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
