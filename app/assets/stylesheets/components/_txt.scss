@@ -43,7 +43,11 @@ a {
   display: flex;
   flex-direction: column;
   align-self: center;
-  // justify-content: center;
+}
+
+.txt-flex-center {
+  display: flex;
+  justify-content: center;
 }
 
 .txt-logo {
@@ -63,6 +67,18 @@ a {
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   font-size: 12px;
+}
+
+.txt-bold {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.txt-info-bold-big {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
 }
 
 .txt-info-bold {

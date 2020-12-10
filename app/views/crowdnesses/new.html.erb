@@ -4,8 +4,9 @@
   <% end %>
 </div>
 <div class="txt-items card">
+  <h1 class="txt-bold-big txt-flex-center">Update Crowd</h1>
   <%= simple_form_for [@spot, @crowdness] do |f| %>
-    <div class="crowded">
+    <div class="crowded txt-info-bold">
       <%= f.input_field :level, collection: ['Safe', 'Attention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
     </div>
     <br>
