@@ -20,13 +20,19 @@ a {
 .txt-small {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .txt-thin {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: 1rem;
+}
+
+.txt-danger-normal {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .txt-sentances {
@@ -53,12 +59,24 @@ a {
   font-size: 24px;
 }
 
+.txt-info-normal {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+}
+
+.txt-info-bold {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
 .txt-infowindow {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
   font-size: 16px;
   margin-top: 8px;
-  color: #FF9800 !important;
+  color: #FF9800;
   text-decoration: none;
   background-color: transparent;
 }

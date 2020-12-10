@@ -26,6 +26,13 @@
   background-repeat: no-repeat;
 }
 
+.icon-crowd {
+  height: 56px;
+  margin-right: 24px;
+  background-image: url('https://res.cloudinary.com/dbappiopini/image/upload/v1607575234/crowd_icon_faim8c.png');
+  background-repeat: no-repeat;
+}
+
 .post_icon {
   width: 20%;
   height: 24px;
@@ -41,6 +48,12 @@
 .icon-fex {
   display: flex;
   justify-content: space-around;
+}
+
+.icon-fex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .icon-home {
