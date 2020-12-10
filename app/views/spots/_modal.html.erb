@@ -16,9 +16,7 @@
       <%= f.simple_fields_for :crowdnesses do |g| %>
         <div class="txt-danger-normal crowded">
           <%= g.hidden_field :user_id, value: current_user.id %>
-
-          <%= g.input_field :level, collection: ['Safe', 'Atention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
-
+          <%= g.input_field :level, collection: ['Safe', 'Attention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
         </div>
         <br>
         <%= g.input :description, placeholder: 'Description', label: false %>
@@ -31,7 +29,7 @@
         </div>
       <% end %>
     </div>
-<!--     <div class="modal-footer">
+    <!--     <div class="modal-footer">
     </div> -->
     <div class="txt-items btn-flex">
       <%= f.submit "Add ✔", class: 'btn-blue' %>
