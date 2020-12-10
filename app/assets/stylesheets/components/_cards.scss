@@ -14,3 +14,15 @@
   display: flex;
   justify-content: center;
 }
+
+.modal-card {
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 414px;
+    margin: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 8px;
+    border: transparent;
+    border-radius: 2px;
+    background-color: transparent;
+}
