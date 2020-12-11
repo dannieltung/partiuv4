@@ -4,6 +4,9 @@
   <% end %>
 </div>
 <div class="txt-items card">
+  <div class="icon-fex"></div>
+  <h1 class="txt-bold-big txt-flex-center">Spot it!
+  <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1607653199/guy_icon2_usc0hs.png", class: 'icon-home' %></h1>
   <%= simple_form_for @spot do |f| %>
     <%= f.input :name, placeholder: 'Name',label: false %>
     <%= f.input :street, placeholder: 'Street', label: false %>
@@ -12,7 +15,7 @@
     <%= f.input :state,  placeholder: 'State', label: false %>
     <!-- <= f.input :address, label: 'Address' %> -->
     <%= f.simple_fields_for :crowdnesses do |g| %>
-      <div class="crowded">
+      <div class="txt-danger-normal crowded">
         <%= g.hidden_field :user_id, value: current_user.id %>
         <%= g.input_field :level, collection: ['Safe', 'Attention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
       </div>

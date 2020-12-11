@@ -23,11 +23,11 @@ class SpotsController < ApplicationController
     @spot.user = current_user
     @spot.address = address
     @spot.save
-    # if @spot.save!
-    #   redirect_to spot_path(@spot), notice: 'Spot Created!'
-    # else
-    #   render :new
-    # end
+    if @spot.save!
+      redirect_to root_path, notice: 'Spoted It 🤩!'
+    else
+      render :new
+    end
   end
 
   def show

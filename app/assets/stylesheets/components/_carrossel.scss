@@ -6,10 +6,10 @@
 .carrossel{
   height: 250px;
   width: 100%;
-  // outline: 3px solid black;
+  // outline: 1px solid #00000040;
   overflow: hidden;
   margin: 15px auto;
-  box-shadow: 10px 10px 15px rgba(0,0,0,0.3)
+  box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.3);
 }
 
 .carrossel ul{
