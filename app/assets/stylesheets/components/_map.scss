@@ -47,6 +47,14 @@
     transition: width .25s, min-width .25s;
 }
 
+.mapboxgl-canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 500px;
+    max-height: 800px;
+}
+
 // #map {
 //   position: fixed;
 //   top: 0;
