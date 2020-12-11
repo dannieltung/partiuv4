@@ -7,7 +7,7 @@
   <div class="txt-items card-map">
     <div class="icon-fex"></div>
     <h1 class="txt-bold-big txt-flex-center">Spot it!
-    <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606502363/guy_icon_qhcxut.png", class: 'icon-home' %></h1>
+      <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606502363/guy_icon_qhcxut.png", class: 'icon-home' %></h1>
     <%= simple_form_for @spot do |f| %>
       <%= f.input :name, placeholder: 'Name',label: false %>
       <%= f.input :street, placeholder: 'Street', label: false %>
@@ -26,9 +26,9 @@
           <%= g.input :photos, as: :file, input_html: { multiple: true, class: 'custom-file-input' }, label: false %>
         </div>
         <!-- <= g.input :photos, as: :file, input_html: { class: 'custom-file-input' } %> -->
-        <div class="icon-image">
+        <!--  <div class="icon-image">
           <img class="photo-tag" id='preview'>
-        </div>
+        </div> -->
       <% end %>
       <div class="txt-items btn-flex">
         <%= f.submit "Add ✔", class: 'btn-blue' %>
