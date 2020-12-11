@@ -24,7 +24,7 @@ const addMarkersToMap = (map, markers) => {
     var el = document.createElement('div');
       el.className = 'marker';
       el.style.backgroundImage =
-      'url(https://res.cloudinary.com/dbappiopini/image/upload/v1606502363/guy_icon_qhcxut.png)';
+      'url(https://res.cloudinary.com/dbappiopini/image/upload/v1607653199/guy_icon2_usc0hs.png)';
 
     new mapboxgl.Marker(el)
       .setLngLat([ marker.lng, marker.lat ])

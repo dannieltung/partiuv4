@@ -1,7 +1,7 @@
 <div class="txt-items modal-card">
   <%= simple_form_for spot, remote: true do |f| %>
     <div class="modal-header">
-      <h5 class="txt-head modal-title" id="exampleModalLabel">New Spot</h5>
+      <h5 class="txt-bold-big modal-title" id="exampleModalLabel">Spot it!</h5>
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -16,7 +16,9 @@
       <%= f.simple_fields_for :crowdnesses do |g| %>
         <div class="txt-danger-normal crowded">
           <%= g.hidden_field :user_id, value: current_user.id %>
+
           <%= g.input_field :level, collection: ['Safe', 'Attention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
+
         </div>
         <br>
         <%= g.input :description, placeholder: 'Description', label: false %>
