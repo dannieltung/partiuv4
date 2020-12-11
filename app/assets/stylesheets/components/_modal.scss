@@ -30,6 +30,30 @@ input[type="radio"], input[type="checkbox"] {
     pointer-events: none;
 }
 
+.modal-header .close {
+    padding: 0.5rem 0.8rem;
+    margin: -1rem -1rem -1rem auto;
+}
+
+button.close {
+    padding: 0px;
+    background-color: #302f2ecc;
+    border: 0;
+}
+
+.close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: white;
+    text-shadow: 0 1px 0 black;
+    opacity: .5;
+    // background-color: #302f2ecc;
+    // padding: 4px 12px 8px 12px;
+    border-radius: 8px;
+}
+
 .modal-card {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 350px;
