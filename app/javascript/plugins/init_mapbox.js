@@ -53,7 +53,9 @@ const getUserLocation = (map, markers) => {
     markers.push({lat: position.coords.latitude, lng: position.coords.longitude });
     addMarkersToMap(map, markers);
     map.flyTo({center: { lat: markers[markers.length - 1].lat, lng: markers[markers.length - 1].lng },
-      zoom: 15 });
+      zoom: 18,
+      speed: 0.7,
+      curve: 1 });
     // fitMapToMarkers(map, markers);
   }
   $(document).ready(() => {
@@ -69,10 +71,10 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     const map = new mapboxgl.Map({
       center: {
-        lat: markers[markers.length - 2].lat,
-        lng: markers[markers.length - 2].lng
+        lat: markers[markers.length - 1].lat,
+        lng: markers[markers.length - 1].lng
       },
-      zoom: 15,
+      zoom: 20,
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
