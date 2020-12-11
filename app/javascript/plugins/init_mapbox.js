@@ -69,6 +69,7 @@ const initMapbox = () => {
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const markers = JSON.parse(mapElement.dataset.markers);
+    console.log(markers);
     const map = new mapboxgl.Map({
       center: {
         lat: markers[markers.length - 1].lat,
@@ -81,6 +82,9 @@ const initMapbox = () => {
     map.addControl(new MapboxGeocoder({ accessToken: mapboxgl.accessToken, mapboxgl: mapboxgl }));
     addMarkersToMap(map, markers);
     // fitMapToMarkers(map, markers);
+    // setTimeout(() => {
+    //   getUserLocation(map, markers);
+    // }, 5000);
     getUserLocation(map, markers);
     // btn.addEventListener("click", (e) => {
     //   map.flyTo({center: { lat: markers[markers.length - 2].lat, lng: markers[markers.length - 2].lng }, zoom: 15 });
