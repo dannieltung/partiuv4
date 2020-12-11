@@ -9,7 +9,7 @@
     <p><%= "#{@spot.street}, #{@spot.number}" %></p>
     <p><%= "#{@spot.city} - #{@spot.state}" %></p>
   </div>
-  <% @spot.crowdnesses.last.each do |crowdness| %>
+  <% @spot.crowdnesses.each do |crowdness| %>
     <div class="card">
       <p><%= "#{crowdness.level} on #{crowdness.created_at.strftime("%d/%m/%Y")} at #{crowdness.created_at.strftime("%I:%M %p")}" %></p>
       <p>Description: <%= crowdness.description %></p>
