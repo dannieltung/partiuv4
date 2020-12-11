@@ -12,7 +12,7 @@
     <%= f.input :state,  placeholder: 'State', label: false %>
     <!-- <= f.input :address, label: 'Address' %> -->
     <%= f.simple_fields_for :crowdnesses do |g| %>
-      <div class="crowded">
+      <div class="txt-danger-normal crowded">
         <%= g.hidden_field :user_id, value: current_user.id %>
         <%= g.input_field :level, collection: ['Safe', 'Attention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
       </div>
