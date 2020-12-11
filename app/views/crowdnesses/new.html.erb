@@ -1,26 +1,28 @@
-<div class="btn-home">
-  <%= link_to root_path  do %>
-    <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1607399415/home_icon_white_ipejhz.png", class: 'icon-home' %>
-  <% end %>
-</div>
-<div class="txt-items card">
-  <h1 class="txt-bold-big txt-flex-center">Update Spot!
-    <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606502363/guy_icon_qhcxut.png", class: 'icon-home' %>
-    </h1>
-    <%= simple_form_for [@spot, @crowdness] do |f| %>
-    <div class="crowded txt-bold">
-      <%= f.input_field :level, collection: ['Safe', 'Attention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
-    </div>
-    <br>
-    <%= f.input :description, placeholder: 'Description', label: false %>
-    <div class="icon-photo">
-      <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'custom-file-input' }, label: false %>
-    </div>
-    <div class="icon-image">
-      <img class='photo-tag' id='preview'>
-    </div>
-    <div class="txt-items btn-flex">
-      <%= f.submit "Add ✔", class: 'btn-blue' %>
-    </div>
-  <% end %>
+<div class="map-back">
+  <div class="btn-home">
+    <%= link_to root_path  do %>
+      <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1607399415/home_icon_white_ipejhz.png", class: 'icon-home' %>
+    <% end %>
+  </div>
+  <div class="txt-items card-map">
+    <h1 class="txt-bold-big txt-flex-center">Update Spot!
+      <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1606502363/guy_icon_qhcxut.png", class: 'icon-home' %>
+      </h1>
+      <%= simple_form_for [@spot, @crowdness] do |f| %>
+      <div class="crowded txt-bold">
+        <%= f.input_field :level, collection: ['Safe', 'Attention', 'Danger'], as: :radio_buttons, wrapper: :horizontal_collection_inline %>
+      </div>
+      <br>
+      <%= f.input :description, placeholder: 'Description', label: false %>
+      <div class="icon-photo">
+        <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'custom-file-input' }, label: false %>
+      </div>
+      <div class="icon-image">
+        <img class='photo-tag' id='preview'>
+      </div>
+      <div class="txt-items btn-flex">
+        <%= f.submit "Add ✔", class: 'btn-blue' %>
+      </div>
+    <% end %>
+  </div>
 </div>
