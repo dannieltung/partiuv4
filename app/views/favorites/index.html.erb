@@ -5,7 +5,9 @@
 </div>
 <p id="map"></p>
 <p id="demo"></p>
-<h1 class="txt-bold-big">Favorites Places</h1>
+<h1 class="txt-bold-big">Favorites Places
+  <%= image_tag "https://res.cloudinary.com/dbappiopini/image/upload/v1607399415/home_icon_white_ipejhz.png", class: 'icon-home' %>
+</h1>
 <div class="txt-items card">
   <%= simple_form_for [@favorite] do |f| %>
     <%= f.association :spot %>
