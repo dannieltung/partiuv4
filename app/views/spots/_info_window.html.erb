@@ -1,5 +1,4 @@
 <% unless spot.crowdnesses.empty? %>
-
   <div class="d-flex justify-content-between">
     <p class="txt-infowindow" style="margin-bottom: 0.5rem;"><%= link_to spot.name, spot_path(spot) %></p>
     <div class="icon-fex-column">
@@ -9,7 +8,6 @@
       <!-- <p style="margin-top: -8px; margin-bottom: 0;">Update it</p> -->
     </div>
   </div>
-
   <div class="txt-info-normal">
     <% if (Time.now - spot.crowdnesses.last.created_at).to_i/1.minutes < 60 %>
       <!-- <p><= "#{spot.crowdnesses.last.level} #{((Time.now - spot.crowdnesses.last.created_at).to_i)/1.minutes} min ago" %></p> -->
