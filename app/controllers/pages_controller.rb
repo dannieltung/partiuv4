@@ -18,10 +18,12 @@ class PagesController < ApplicationController
 
 
 
-#     def splash
-#       render :splash
-#       sleep 5
-#       redirect_to :root
-#     end
+
+
+  #     def splash
+  #       render :splash
+  #       sleep 5
+  #       redirect_to :root
+  #     end
 
 end
