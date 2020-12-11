@@ -30,9 +30,9 @@ window.$ = $;
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
 
-  $("#spot_crowdnesses_attributes_0_photos").change(function() {
-    showPreview(this);
-  })
+  // $("#spot_crowdnesses_attributes_0_photos").change(function() {
+  //   showPreview(this);
+  // })
 });
 
 // import { initMapbox } from '../plugins/init_mapbox';
