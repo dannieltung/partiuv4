@@ -41,7 +41,7 @@
     font-family: "Open Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
     position: relative;
     background-color: #fff;
-    min-width: 345px;
+    min-width: 385px;
     z-index: 1;
     border-radius: 25px;
     transition: width .25s, min-width .25s;
@@ -58,7 +58,7 @@
 }
 
 .map-back{
-  background-image: url('partiu/mapBack.png');
+  background-image: url('https://res.cloudinary.com/dbappiopini/image/upload/v1607712891/mapBack_vvkkt8.png');
   left: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
